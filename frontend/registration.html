@@ -14,28 +14,134 @@
 </head>
 <body>
     <!-- Navigation section  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Trade <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Company</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mr-auto">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Trade <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Company</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+          <button class="btn btn-success" type="button">Open Account</button>
+          <button class="btn btn-outline-secondary" type="button">Login</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <form class="m-4">
+            <div class="form">
+              <div class="col-lg">
+                <label for="validationServer01">First name</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Last name</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer04">Country</label>
+                <select class="custom-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option>...</option>
+                </select>
+                <div id="validationServer04Feedback" class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+            </div>
+            <div class="form">
+              <div class="col-lg ">
+                <label for="validationServer03">Phone</label>
+                <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer05">Zip</label>
+                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Email</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="email" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer03">Username</label>
+                <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Username" required>
+                <div class="invalid-feedback">
+                  Username taken!
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer05">Password</label>
+                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                  Password should contain alpha-numeric and symbols.
+                </div>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Referral</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="referral code" disabled>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Zip Code</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="zip code" required>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Account Type</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="account type" required>
+              </div>
+              <div class="col-lg">
+                <label for="validationServer02">Account Type</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="account currency" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                <label class="form-check-label" for="invalidCheck3">
+                  Agree to terms and conditions
+                </label>
+                <div  id="invalidCheck3Feedback" class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
         </div>
-      </nav>
+        <div class="col-lg-4"></div>
+      </div>
+    </div>
 
 
 
