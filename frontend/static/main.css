@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+/* footer styling  */
+h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding-left: 2px;
+} 
+
+ul {
+    list-style: none;
+    padding-left: 2px;
+}
