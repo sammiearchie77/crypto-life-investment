@@ -1,0 +1,80 @@
+/* navigation */
+#custom-nav{
+    background-color: #154a95;
+
+    padding: 1.2rem 0;
+}
+.nav-img {
+    width: 20%;
+}
+
+/* banner */
+.computer-image-float{
+    width: 40%;
+    position: absolute;
+    /* z-index: 10; */
+    top: 9rem;
+    left: 41rem;
+}
+
+#test-bg {
+    width: 100%;
+    height: 35rem;
+}
+
+/* plan */
+.plan-header {
+    /* background: #2ECC71; */
+    /* border-style: solid; */
+    border-top: 6rem solid #2ECC71;
+    border-right: 0.9rem solid transparent;
+    /* border-bottom: 70px solid #2ECC71; */
+    /* border-bottom: 150px solid red; */
+
+    /* border-width: 90px 1411px 23px 399px; */
+    /* position: absolute; */
+    /* background: #2ECC71 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #2ECC71; */
+    /* color: #fff; */
+    /* height: 600px; */
+}
+
+.plan-header > h3 {
+    color: white;
+    position: absolute;
+    top: 2rem;
+    left: 20%;
+}
+
+/* webinars */
+#webinar {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3.5rem 0;
+}
+#info-icon {
+    border-radius: 80%;
+    box-shadow: 0 0 0 9px rgba(0,169,117,1), 0 0 0 42px rgba(0,169,117,.4), 0 0 0 71px rgba(0,169,117,.2);
+}
+
+/* client protection and payment method */
+#payment-method-home {
+    width: 100%;
+}
+
+/* footer styling  */
+h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding-left: 2px;
+} 
+
+ul {
+    list-style: none;
+    padding-left: 2px;
+}
+
+/* about section */
+#message {
+    position: relative;
+    top: 93px;
+}
