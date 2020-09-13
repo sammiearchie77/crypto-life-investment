@@ -1,7 +1,15 @@
+/* color scheme */
+/* 
+background-color : #2e77c3
+icon: #2e77c3
+
+*/
+
+
 /* navigation */
 #custom-nav{
-    background-color: #154a95;
-
+    /* background-color: #154a95; */
+    background-color: #2e77c3;
     padding: 1.2rem 0;
 }
 .nav-img {
@@ -24,27 +32,25 @@
 
 /* plan */
 .plan-header {
-    /* background: #2ECC71; */
-    /* border-style: solid; */
-    border-top: 6rem solid #2ECC71;
-    border-right: 0.9rem solid transparent;
-    /* border-bottom: 70px solid #2ECC71; */
-    /* border-bottom: 150px solid red; */
-
-    /* border-width: 90px 1411px 23px 399px; */
-    /* position: absolute; */
-    /* background: #2ECC71 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #2ECC71; */
-    /* color: #fff; */
-    /* height: 600px; */
+    background: #2e77c3;
+    color: white;
+    padding: 10% 0;    
 }
 
 .plan-header > h3 {
-    color: white;
-    position: absolute;
-    top: 2rem;
-    left: 20%;
+   font-weight: bold;
 }
 
+.plan-price {
+    background-color: grey;
+    color: white;
+    padding: 4% 0;
+}
+
+.plan-features {
+    border-left: 2px solid grey;
+    border-right: 2px solid grey;
+}
 /* webinars */
 #webinar {
     background: rgba(0, 0, 0, 0.8);
