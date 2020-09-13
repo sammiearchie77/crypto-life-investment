@@ -16,6 +16,7 @@ icon: #2e77c3
     width: 20%;
 }
 
+
 /* banner */
 .computer-image-float{
     width: 40%;
@@ -34,7 +35,7 @@ icon: #2e77c3
 .plan-header {
     background: #2e77c3;
     color: white;
-    padding: 10% 0;    
+    padding: 14% 0;    
 }
 
 .plan-header > h3 {
@@ -44,13 +45,45 @@ icon: #2e77c3
 .plan-price {
     background-color: grey;
     color: white;
-    padding: 4% 0;
+    padding: 7% 0;
 }
 
 .plan-features {
     border-left: 2px solid grey;
     border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
+    margin-bottom: 10%;
 }
+
+.plan-features > p {
+    padding: 4% 0;
+}
+/* open live account */
+
+/* trade global */
+#trade-global {
+    background-color: black;
+    color: whitesmoke;
+}
+
+#trade-global-header {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 3% 0;
+}
+
+.chart {
+    height: 500px;
+}
+
+.open-live-account-chart-button {
+    padding: 3% 0;
+}
+
+.open-live-account-chart-button > button {
+    padding: 3% 0;
+}
+
 /* webinars */
 #webinar {
     background: rgba(0, 0, 0, 0.8);
@@ -69,8 +102,8 @@ icon: #2e77c3
 
 /* footer styling  */
 h3 {
-    font-size: 18px !important;
-    font-weight: 500 !important;
+    font-size: 18px ;
+    font-weight: 500 ;
     padding-left: 2px;
 } 
 
@@ -83,4 +116,14 @@ ul {
 #message {
     position: relative;
     top: 93px;
+}
+
+/* desktop mode */
+@media only screen and (min-width: 800px){
+    .mobile{
+        display: none;
+    }
+}
+@media only screen and (max-width: 800px){
+
 }
