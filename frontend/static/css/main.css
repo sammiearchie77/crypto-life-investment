@@ -5,6 +5,10 @@ icon: #2e77c3
 
 */
 
+.flat {
+    border-radius: 0;
+}
+
 
 /* navigation */
 #custom-nav{
@@ -16,6 +20,41 @@ icon: #2e77c3
     width: 20%;
 }
 
+#nav-link > a {
+    color: white;
+    margin-right: 6%;
+}
+
+#nav-link > a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+    /* nav dropdown */
+
+#trade-portion, #education-portion, #about-portion {
+    background: black;
+    position: absolute;
+    width: 100%;
+    top: 12%;
+    z-index: 5;
+    /* display: none; */
+}
+.trading-heading {
+    color: white;
+    font-size: 1.4rem;
+    margin: 4% 0;
+}
+.nav-dropdown {
+    /* list-style: disc;s */
+    color: #00a975;
+    padding: 3% 0; 
+}
+.nav-dropdown > a{
+    color: #00a975;
+}
+
+
 
 /* banner */
 .computer-image-float{
@@ -25,10 +64,19 @@ icon: #2e77c3
     top: 9rem;
     left: 41rem;
 }
+/* Why choose Crypto Life */
+#why-choose-header {
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin: 3% 0;
+    text-transform: uppercase;
+}
 
-#test-bg {
-    width: 100%;
-    height: 35rem;
+.why-crypto-icon {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #2e77c3;
+    padding: 13% 6rem;
 }
 
 /* plan */
@@ -92,7 +140,7 @@ icon: #2e77c3
 }
 #info-icon {
     border-radius: 80%;
-    box-shadow: 0 0 0 9px rgba(0,169,117,1), 0 0 0 42px rgba(0,169,117,.4), 0 0 0 71px rgba(0,169,117,.2);
+    box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0,169,117,.4), 0 0 0 71px rgba(0,169,117,.2);
 }
 
 /* client protection and payment method */
