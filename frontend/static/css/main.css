@@ -2,52 +2,48 @@
     border-radius: 0;
 }
 
+
 /* 
 
 desktop mode
 
 */
-@media only screen and (min-width: 800px){
-    .mobile{
+
+@media only screen and (min-width: 800px) {
+    .mobile {
         display: none;
-    }   
-    
-    
+    }
     /* navigation */
-    #custom-nav{
+    #custom-nav {
         /* background-color: #154a95; */
         /* background-color: #2e77c3; */
-        background: rgba(0, 0, 0,1);
+        background: rgba(0, 0, 0, 1);
         padding: 2rem 0;
         position: absolute;
         top: 0;
         z-index: 3;
         width: 100%;
     }
-    
     .sticky-nav {
-        background: linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 50%,rgba(0,0,0,0) 100%) !important;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%) !important;
         padding: 3rem 0;
         position: fixed !important;
     }
-    
     .nav-img {
         width: 20%;
     }
-    
-    #nav-link > a {
+    #nav-link>a {
         color: white;
         margin-right: 6%;
     }
-    
-    #nav-link > a:hover {
+    #nav-link>a:hover {
         color: grey;
         text-decoration: none;
     }
-    
-        /* nav dropdown */
-    
-    #trade-portion, #education-portion, #about-portion {
+    /* nav dropdown */
+    #trade-portion,
+    #education-portion,
+    #about-portion {
         background: rgba(0, 0, 0, 0.6);
         position: absolute;
         width: 100%;
@@ -63,16 +59,13 @@ desktop mode
     .nav-dropdown {
         /* list-style: disc;s */
         color: #00a975;
-        padding: 3% 0; 
+        padding: 3% 0;
     }
-    .nav-dropdown > a{
+    .nav-dropdown>a {
         color: #00a975;
     }
-    
-    
-    
     /* banner */
-    .computer-image-float{
+    .computer-image-float {
         width: 40%;
         position: absolute;
         /* z-index: 10; */
@@ -86,67 +79,55 @@ desktop mode
         margin: 3% 0;
         text-transform: uppercase;
     }
-    
     .why-crypto-icon {
         font-size: 2.2rem;
         text-align: center;
         color: #2e77c3;
         padding: 13% 6rem;
     }
-    
     /* plan */
     .plan-header {
         background: #2e77c3;
         color: white;
-        padding: 14% 0;    
+        padding: 14% 0;
     }
-    
-    .plan-header > h3 {
-       font-weight: bold;
+    .plan-header>h3 {
+        font-weight: bold;
     }
-    
     .plan-price {
         background-color: grey;
         color: white;
         padding: 7% 0;
     }
-    
     .plan-features {
         border-left: 2px solid grey;
         border-right: 2px solid grey;
         border-bottom: 2px solid grey;
         margin-bottom: 10%;
     }
-    
-    .plan-features > p {
+    .plan-features>p {
         padding: 4% 0;
     }
     /* open live account */
-    
     /* trade global */
     #trade-global {
         background-color: black;
         color: whitesmoke;
     }
-    
     #trade-global-header {
         font-weight: bold;
         font-size: 2rem;
         padding: 3% 0;
     }
-    
     .chart {
         height: 500px;
     }
-    
     .open-live-account-chart-button {
         padding: 3% 0;
     }
-    
-    .open-live-account-chart-button > button {
+    .open-live-account-chart-button>button {
         padding: 3% 0;
     }
-    
     /* webinars */
     #webinar {
         background: rgba(0, 0, 0, 0.8);
@@ -155,26 +136,22 @@ desktop mode
     }
     #info-icon {
         border-radius: 80%;
-        box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0,169,117,.4), 0 0 0 71px rgba(0,169,117,.2);
+        box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0, 169, 117, .4), 0 0 0 71px rgba(0, 169, 117, .2);
     }
-    
     /* client protection and payment method */
     #payment-method-home {
         width: 100%;
     }
-    
     /* footer styling  */
     h3 {
-        font-size: 18px ;
-        font-weight: 500 ;
+        font-size: 18px;
+        font-weight: 500;
         padding-left: 2px;
-    } 
-    
+    }
     ul {
         list-style: none;
         padding-left: 2px;
     }
-    
     /* about section */
     #message {
         position: relative;
@@ -183,67 +160,52 @@ desktop mode
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* 
 
     mobile view
 
 */
-@media only screen and (max-width: 800px){
+
+@media only screen and (max-width: 800px) {
     .desktop {
         display: none;
     }
     .flat {
         border-radius: 0;
     }
-    
-    
     /* navigation */
-    #custom-nav{
+    #custom-nav {
         /* background-color: #154a95; */
         /* background-color: #2e77c3; */
-        background: rgba(0, 0, 0,1);
+        background: rgba(0, 0, 0, 1);
         padding: 2rem 0;
         /* position: absolute; */
         top: 0;
         /* z-index: 3; */
         /* width: 100%; */
     }
-    
     .sticky-nav {
-        background: linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,0.7) 50%,rgba(0,0,0,0) 100%) !important;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%) !important;
         padding: 3rem 0;
         position: fixed !important;
     }
-    
     .nav-img {
         width: 70%;
     }
-    
-    #nav-link-mobile > a {
+    #nav-link-mobile>a {
         color: white;
         margin-right: 6%;
-        display:block;
+        display: block;
         z-index: 6;
     }
-    
-    #nav-link-mobile > a:hover {
+    #nav-link-mobile>a:hover {
         color: grey;
         text-decoration: none;
     }
-    
-        /* nav dropdown */
-    
-    #trade-portion, #education-portion, #about-portion {
+    /* nav dropdown */
+    #trade-portion,
+    #education-portion,
+    #about-portion {
         background: rgba(0, 0, 0, 0.6);
         position: absolute;
         width: 100%;
@@ -251,9 +213,8 @@ desktop mode
         z-index: 5;
         /* display: none; */
     }
-
     #trade-portion-mobile {
-        background: rgba(30, 30, 30,1)
+        background: rgba(30, 30, 30, 1)
     }
     .trading-heading {
         color: white;
@@ -263,23 +224,19 @@ desktop mode
     .nav-dropdown {
         /* list-style: disc;s */
         color: #00a975;
-        padding: 3% 0; 
+        padding: 3% 0;
     }
-    .nav-dropdown > a{
+    .nav-dropdown>a {
         color: #00a975;
     }
-    
-    
-    
     /* banner */
-    .computer-image-float{
+    .computer-image-float {
         width: 40%;
         position: absolute;
         z-index: 10;
         top: 9rem;
         left: 41rem;
     }
-
     /* Why choose Crypto Life */
     #why-choose-header {
         font-weight: bold;
@@ -287,50 +244,44 @@ desktop mode
         margin: 3% 0;
         text-transform: uppercase;
     }
-    
     .why-crypto-icon {
         font-size: 2.2rem;
         text-align: center;
         color: #2e77c3;
         padding: 13% 6rem;
     }
-    
     .why-cryptolife {
         text-align: center;
         margin: 4rem 0;
     }
-
 }
 
+
 /* mobile mode  */
+
 @media only screen and (max-width: 800px) {
     .container-fluid {
         margin: 0 !important;
         font-size: small !important;
     }
-
     .col-lg-8 {
         margin: 0 !important;
     }
-    
     ul {
         padding: 10px;
     }
-
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         font-size: 20px;
     }
-
     p {
-       text-justify: auto;
+        text-justify: auto;
     }
-
     /* footer section  */
-
     .footer {
         margin: 2px !important;
     }
-
     .footer-footer {
         position: relative;
         right: 30px;
@@ -339,13 +290,11 @@ desktop mode
         margin: 0;
         text-align: justify;
     }
-        
     .why-cryptolife-header {
         font-weight: bold;
         font-size: 1.9rem;
         margin: 3% 0;
     }
-
     .why-crypto-body {
         font-size: 1rem;
         font-weight: 400;
@@ -356,55 +305,45 @@ desktop mode
     .plan-header {
         background: #2e77c3;
         color: white;
-        padding: 14% 0;    
+        padding: 14% 0;
     }
-    
-    .plan-header > h3 {
-       font-weight: bold;
+    .plan-header>h3 {
+        font-weight: bold;
     }
-    
     .plan-price {
         background-color: grey;
         color: white;
         padding: 7% 0;
     }
-    
     .plan-features {
         border-left: 2px solid grey;
         border-right: 2px solid grey;
         border-bottom: 2px solid grey;
         margin-bottom: 10%;
     }
-    
-    .plan-features > p {
+    .plan-features>p {
         padding: 4% 0;
     }
     /* open live account */
-    
     /* trade global */
     #trade-global {
         background-color: black;
         color: whitesmoke;
     }
-    
     #trade-global-header {
         font-weight: bold;
         font-size: 2rem;
         padding: 3% 0;
     }
-    
     .chart {
         height: 500px;
     }
-    
     .open-live-account-chart-button {
         padding: 3% 0;
     }
-    
-    .open-live-account-chart-button > button {
+    .open-live-account-chart-button>button {
         padding: 3% 0;
     }
-    
     /* webinars */
     #webinar {
         background: rgba(0, 0, 0, 0.8);
@@ -413,30 +352,25 @@ desktop mode
     }
     #info-icon {
         border-radius: 80%;
-        box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0,169,117,.4), 0 0 0 71px rgba(0,169,117,.2);
+        box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0, 169, 117, .4), 0 0 0 71px rgba(0, 169, 117, .2);
     }
-    
     /* client protection and payment method */
     #payment-method-home {
         width: 100%;
     }
-
     .client-protection-box {
         margin: 2rem 3%;
     }
-    
     /* footer styling  */
     h3 {
-        font-size: 18px ;
-        font-weight: 500 ;
+        font-size: 18px;
+        font-weight: 500;
         padding-left: 2px;
-    } 
-    
+    }
     ul {
         list-style: none;
         padding-left: 2px;
     }
-    
     /* about section */
     #message {
         position: relative;
