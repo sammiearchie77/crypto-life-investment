@@ -300,6 +300,46 @@ desktop mode
         margin: 4rem 0;
     }
 
+}
+
+/* mobile mode  */
+@media only screen and (max-width: 800px) {
+    .container-fluid {
+        margin: 0 !important;
+        font-size: small !important;
+    }
+
+    .col-lg-8 {
+        margin: 0 !important;
+    }
+    
+    ul {
+        padding: 10px;
+    }
+
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+
+    p {
+       text-justify: auto;
+    }
+
+    /* footer section  */
+
+    .footer {
+        margin: 2px !important;
+    }
+
+    .footer-footer {
+        position: relative;
+        right: 30px;
+        bottom: 30px;
+        padding: 0 !important;
+        margin: 0;
+        text-align: justify;
+    }
+        
     .why-cryptolife-header {
         font-weight: bold;
         font-size: 1.9rem;
