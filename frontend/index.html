@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="./static/css/main.css">
 </head>
 <body>
-    <!-- navigation -->
-    <nav id="custom-nav">
+
+    
+    <!-- desktop navigation -->
+    <nav id="custom-nav" class="desktop">
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -23,9 +25,9 @@
                 </div>
                 <div class="col-5">
                     <div id="nav-link">
-                        <a href="">Trade <span class="fas fa-chevron-down ml-2"></span></a>
-                        <a href="">Ananlytics <span class="fas fa-chevron-down ml-2"></span></a>
-                        <a href="">About Company <span class="fas fa-chevron-down ml-2"></span></a>
+                        <a id="trade-link">Trade <span class="fas fa-chevron-right ml-2"></span></a>
+                        <a id="education-link">Ananlytics <span class="fas fa-chevron-right ml-2"></span></a>
+                        <a id="about-link">About Company <span class="fas fa-chevron-right ml-2"></span></a>
                     </div>
                 </div>
                 <div class="col-4">
@@ -35,14 +37,424 @@
                     <button class="btn btn-outline-success">Login</button>
                 </div>
             </div>
-        </div>
-        
-
+        </div>       
     </nav>
 
-    <!-- banner -->
+    <!-- mobile nav -->
+    <nav id="custom-nav" class="mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="./static/img/logo_transparent.png" alt="" class="nav-img">
+                </div>
+                <div class="col-4"></div>
+                <div class="col-3">
+                    <button class="btn btn-primary" id="nav-toggle">
+                        <span class="fas fa-bars"></span>
+                    </button>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                        <button class="btn btn-success btn-block">Open Account</button>
+                        </div>
+                        <div class="col-6">
+                        <button class="btn btn-outline-success btn-block">Login</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>    
+    </nav>
+    <div id="nav-link-mobile">
+        <a id="trade-link">Trade <span class="fas fa-chevron-right ml-2"></span></a>
+        <a id="education-link">Ananlytics <span class="fas fa-chevron-right ml-2"></span></a>
+        <a id="about-link">About Company <span class="fas fa-chevron-right ml-2"></span></a>
+    </div>
+    <div class="mobile">
+        <div id="trade-portion-mobile ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h3 class="trading-heading"><span class="fas fa-cogs mr-3"></span> Trading Tools</h3>
+                        <ul>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Forex
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Commodity Future
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Share Indexes
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Energy Carriers
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3 class="trading-heading"><span class="fas fa-credit-card mr-3"></span> Trading Account</h3>
+                        <ul>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Payment Methods
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Withdrawal Informationa and General Fees
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3 class="trading-heading"><span class="fas fa-scroll mr-3"></span> Terms Of Trade</h3>
+                        <ul>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Order Execution
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Spreads
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Swaps
+                                </a>
+                            </li>
+                            <li class="nav-dropdown">
+                                <a href="">
+                                    Trading Hours
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                </div>
+                 <!--  Eduction portion-mobile  -->
+    <div id="education-portion-mobile ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-education-cap mr-3"></span> Education Center</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Webinars
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Calendar Webinars
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                               E-books
+                            </a>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-chart-line mr-3"></span> Analytics</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Traders Advices
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading">Terms Of Trade</h3>
+                    <p>
+                        On the page “Education and analytics” you will find valuable data that will support you. We offer you a chance to gain proficiency with every one of the parts of exchanging, including value gauges, hazard and capital administration and exchanging brain science. Analytics is a piece of achievement of any broker. We get ready to market examination and gather data about most recent news once a day. Here you will likewise discover advantageous and simple to-utilize monetary timetable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- about portion -->
+    <div id="about-portion-mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-building mr-3"></span> CryptoLife Investment</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Affiliate Program
+                            </a>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-gavel mr-3"></span> Regulation</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Regulation Explained
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Account verification documents
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-shield-alt mr-3"></span> Terms Of Trade</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Safety of Funds
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Terms and conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+                <button class="btn-close">
+                    <span class="fas fa-plus"></span>
+                </button>
+            </div>
+        </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    </div>  
+    </div>
+        
+
+    <!-- desktop version -->
+    <!-- navigation dropdown -->
+    <!-- trade portion-mobile  -->
+<div class="mobile">
+    <div id="trade-portion">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-cogs mr-3"></span> Trading Tools</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Forex
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Commodity Future
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Share Indexes
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Energy Carriers
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-credit-card mr-3"></span> Trading Account</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Payment Methods
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Withdrawal Informationa and General Fees
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-scroll mr-3"></span> Terms Of Trade</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Order Execution
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Spreads
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Swaps
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Trading Hours
+                            </a>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn-close">
+                <span class="fas fa-plus"></span>
+            </button>
+        </div>
+    </div>
+
+    <!--  Eduction portion  -->
+    <div id="education-portion ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-education-cap mr-3"></span> Education Center</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Webinars
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Calendar Webinars
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                               E-books
+                            </a>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-chart-line mr-3"></span> Analytics</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Traders Advices
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading">Terms Of Trade</h3>
+                    <p>
+                        On the page “Education and analytics” you will find valuable data that will support you. We offer you a chance to gain proficiency with every one of the parts of exchanging, including value gauges, hazard and capital administration and exchanging brain science. Analytics is a piece of achievement of any broker. We get ready to market examination and gather data about most recent news once a day. Here you will likewise discover advantageous and simple to-utilize monetary timetable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- about portion -->
+    <div id="about-portion">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-building mr-3"></span> CryptoLife Investment</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Affiliate Program
+                            </a>
+                        </li>    
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-gavel mr-3"></span> Regulation</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Regulation Explained
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Account verification documents
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="trading-heading"><span class="fas fa-shield-alt mr-3"></span> Terms Of Trade</h3>
+                    <ul>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Safety of Funds
+                            </a>
+                        </li>
+                        <li class="nav-dropdown">
+                            <a href="">
+                                Terms and conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <!-- banner -->
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -69,36 +481,40 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+    <!-- end of banner  -->
 
     <!-- why cryptolife -->
-    <div class="container">
-        <h3 class="text-center">Why Choose cryptolife</h3>
-        <div class="row">
+    <div class="container why-cryptolife" >
+        <h3 class="text-center" id="why-choose-header">Why Choose cryptolife</h3>
+        <div class="row mb-3">
             <div class="col-lg-3">
-                <span class="fas fa-balance-scale"></span>
-                <h3>REGULATED BROKER</h3>
-                <p>Regulated under the strict standards of the DOS in US, a460 Ltd. complies with the highest regulatory standards.</p>
+                <span class="fas fa-balance-scale why-crypto-icon"></span>
+                <h3 class="why-cryptolife-header">REGULATED BROKER</h3>
+                <p class="why-crypto-body">Regulated under the strict standards of the DOS in US, a460 Ltd. complies with the highest regulatory standards.</p>
 
             </div>
             <div class="col-lg-3">
-                <span class="fas fa-microchip"></span>
-                <h3> INNOVATION NON STOP</h3>
-                <p>Cryptolife Investment never stops innovating, always striving to make the trading experience seamless, intuitive and user-friendly.</p>               
+                <span class="fas fa-microchip why-crypto-icon"></span>
+                <h3 class="why-cryptolife-header"> INNOVATION NON STOP</h3>
+                <p class="why-crypto-body">Cryptolife Investment never stops innovating, always striving to make the trading experience seamless, intuitive and user-friendly.</p>               
             </div>
             <div class="col-lg-3">
-                <span class="fas fa-lock"></span>
-                <h3>SECURED FUNDS</h3>
-                <p>Maximum protection of clients funds against Negative balance protection and relationships with Top International banks</p>
+                <span class="fas fa-lock why-crypto-icon"></span>
+                <h3 class="why-cryptolife-header">SECURED FUNDS</h3>
+                <p class="why-crypto-body">Maximum protection of clients funds against Negative balance protection and relationships with Top International banks</p>
                 
             </div>
             <div class="col-lg-3">
-                <span class="fas fa-chart-line"></span>
-                <h3>BEST ECN TECHNOLOGY</h3>
-                <p>Our ECN (Electronic Communication Network) Technology, which seeks to guarantee that traders always trade under the best trading conditions</p>
+                <span class="fas fa-chart-line why-crypto-icon"></span>
+                <h3 class="why-cryptolife-header">BEST ECN TECHNOLOGY</h3>
+                <p class="why-crypto-body">Our ECN (Electronic Communication Network) Technology, which seeks to guarantee that traders always trade under the best trading conditions</p>
                 
             </div>
         </div>
     </div>
+
+
+
     <!-- plans -->
     <div class="container">
         <div class="row">
@@ -134,7 +550,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
 
@@ -171,7 +587,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -208,7 +624,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -244,7 +660,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>               
             </div>
@@ -280,7 +696,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -316,7 +732,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -352,7 +768,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -388,7 +804,7 @@
                         </p>
                     </div>
                     <div class="plan-footer">
-                        <button class="btn btn-outline-success btn-block mb-4">Sign Up</button>
+                        <button class="btn btn-outline-success btn-block mb-4 flat">Sign Up</button>
                     </div>
                 </div>
             </div>
@@ -623,8 +1039,8 @@
         <button class="btn btn-success mx-auto">OPEN LIVE ACCOUNT <span class="fas fa-angle-right"></span></button>
     </div>
     <!-- client protection & payment methods-->
+    <h2 class="text-weight-bold text-center">Client Protection</h2>
     <div class="container">
-           <h2 class="text-weight-bold text-center">Client Protection</h2>
        <div class="row">
             <div class="col-lg-4">
                 <div class="row">
@@ -741,11 +1157,10 @@
    </div>
     <!-- Javascript files -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-dddB4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+    <script src="./static/js/main.js"></script>
 </body>
 </html>
