@@ -333,13 +333,13 @@ desktop mode
 
     .footer-footer {
         position: relative;
-        right: 30px;
-        bottom: 30px;
+        left: 20px;
+        top: 20px;
         padding: 0 !important;
         margin: 0;
         text-align: justify;
     }
-        
+
     .why-cryptolife-header {
         font-weight: bold;
         font-size: 1.9rem;
