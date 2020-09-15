@@ -380,6 +380,10 @@ desktop mode
     #payment-method-home {
         width: 100%;
     }
+
+    .client-protection-box {
+        margin: 2rem 3%;
+    }
     
     /* footer styling  */
     h3 {
