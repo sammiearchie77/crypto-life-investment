@@ -13,34 +13,58 @@
     <title>crypto-life-investment</title>
 </head>
 <body>
-    <!-- Navigation section  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mr-auto">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Trade <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Company</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col">
-          <button class="btn btn-success" type="button">Open Account</button>
-          <button class="btn btn-outline-secondary" type="button">Login</button>
-      </div>
+      <!-- desktop navigation -->
+      <nav id="custom-nav" class="desktop">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="./static/img/logo_transparent.png" alt="" class="nav-img">
+                </div>
+                <div class="col-5">
+                    <div id="nav-link">
+                        <a id="trade-link">Trade <span class="fas fa-chevron-right ml-2"></span></a>
+                        <a id="education-link">Ananlytics <span class="fas fa-chevron-right ml-2"></span></a>
+                        <a id="about-link">About Company <span class="fas fa-chevron-right ml-2"></span></a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!-- open account -->
+                    <button class="btn btn-success">Open Account</button>
+                    <!-- login -->
+                    <button class="btn btn-outline-success">Login</button>
+                </div>
+            </div>
+        </div>       
     </nav>
 
+    <!-- mobile nav -->
+    <nav id="custom-nav" class="mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="./static/img/logo_transparent.png" alt="" class="nav-img">
+                </div>
+                <div class="col-4"></div>
+                <div class="col-3">
+                    <button class="btn btn-primary" id="nav-toggle">
+                        <span class="fas fa-bars"></span>
+                    </button>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                        <button class="btn btn-success btn-block">Open Account</button>
+                        </div>
+                        <div class="col-6">
+                        <button class="btn btn-outline-success btn-block">Login</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>    
+    </nav>
     <div class="container">
       <div class="row">
         <div class="col-lg-3"></div>
@@ -234,6 +258,7 @@
        </div>
      </div>
      <!-- Optional JavaScript -->
+     <script src="./static/js/main.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
