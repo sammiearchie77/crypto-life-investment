@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="expert option invesments dashboard">
+    <title>Dashboard</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar-themes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/verificaiton-fix.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/sam.css' %}"> -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
+
+</head>
+
+<body>
+{% block dashboard %}
+{% endblock %}
+ 
+<!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- owl carousel js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
+    
+    <!-- in body javascript -->
+    <script>
+      $(function ($) {
+        // dashboard sidebar functionality
+
+      // Dropdown menu
+      $(".sidebar-dropdown > a").click(function () {
+          $(".sidebar-submenu").slideUp(200);
+          if ($(this).parent().hasClass("active")) {
+              $(".sidebar-dropdown").removeClass("active");
+              $(this).parent().removeClass("active");
+          } else {
+              $(".sidebar-dropdown").removeClass("active");
+              $(this).next(".sidebar-submenu").slideDown(200);
+              $(this).parent().addClass("active");
+          }
+
+      });
+
+      //toggle sidebar
+      $("#toggle-sidebar").click(function () {
+          $(".page-wrapper").toggleClass("toggled");
+      });
+      //Pin sidebar
+      $("#pin-sidebar").click(function () {
+          if ($(".page-wrapper").hasClass("pinned")) {
+              // unpin sidebar when hovered
+              $(".page-wrapper").removeClass("pinned");
+              $("#sidebar").unbind( "hover");
+          } else {
+              $(".page-wrapper").addClass("pinned");
+              $("#sidebar").hover(
+                  function () {
+                      console.log("mouseenter");
+                      $(".page-wrapper").addClass("sidebar-hovered");
+                  },
+                  function () {
+                      console.log("mouseout");
+                      $(".page-wrapper").removeClass("sidebar-hovered");
+                  }
+              )
+
+          }
+      });
+
+
+      //toggle sidebar overlay
+      $("#overlay").click(function () {
+          $(".page-wrapper").toggleClass("toggled");
+      });
+
+      //switch between themes 
+      var themes = "default-theme legacy-theme chiller-theme ice-theme cool-theme light-theme";
+      $('[data-theme]').click(function () {
+          $('[data-theme]').removeClass("selected");
+          $(this).addClass("selected");
+          $('.page-wrapper').removeClass(themes);
+          $('.page-wrapper').addClass($(this).attr('data-theme'));
+      });
+
+      // switch between background images
+      var bgs = "bg1 bg2 bg3 bg4";
+      $('[data-bg]').click(function () {
+          $('[data-bg]').removeClass("selected");
+          $(this).addClass("selected");
+          $('.page-wrapper').removeClass(bgs);
+          $('.page-wrapper').addClass($(this).attr('data-bg'));
+      });
+
+      // toggle background image
+      $("#toggle-bg").change(function (e) {
+          e.preventDefault();
+          $('.page-wrapper').toggleClass("sidebar-bg");
+      });
+
+      // toggle border radius
+      $("#toggle-border-radius").change(function (e) {
+          e.preventDefault();
+          $('.page-wrapper').toggleClass("boder-radius-on");
+      });
+
+      //custom scroll bar is only used on desktop
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          $(".sidebar-content").mCustomScrollbar({
+              axis: "y",
+              autoHideScrollbar: true,
+              scrollInertia: 300
+          });
+          $(".sidebar-content").addClass("desktop");
+
+      }
+      });
+
+
+    // owl carousel
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin: 10,
+        // nav: true, 
+        responsive : {
+            0:{
+                items: 1, 
+                // nav: true
+            },
+        }
+    });
+w    </script>
+</body>
+</html>

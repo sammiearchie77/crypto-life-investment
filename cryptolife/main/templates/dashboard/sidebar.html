@@ -1,0 +1,160 @@
+{% block sidebar %}
+    <!-- dashboard sidebar -->
+      <!-- remove desktop class to display sidebar on mobile -->
+      <nav id="sidebar" class="sidebar-wrapper ">
+        <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">
+                        <em>Expert</em> Option Investments
+                    </a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">
+                        {{ request.user.profile.first_name }}
+                            <strong>{{ request.user.profile.last_name }}</strong>
+                        </span>
+                        <span class="user-role">Trader</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+            <!-- sidebar-menu  -->
+            <div class=" sidebar-item sidebar-menu">
+                <ul>
+                    <li class="header-menu">
+                        <span>General</span>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-tachometer-alt"></i>
+                            <span class="menu-text">Dashboard</span>
+                            <span class="badge badge-pill badge-warning">New</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    
+                                    {% if  request.user.verificationdocument.verified %}
+                                    <a href="{% url 'main:dashboard' %} ">Trading Centre
+                                        <!-- show locked until documents have been added. -->
+                                        <span class="badge badge-pill badge-success">Unlocked</span>
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'main:id-verification' %} ">Trading Centre
+                                        <!-- show locked until documents have been added. -->
+                                        <span class="badge badge-pill badge-primary">locked</span>
+                                    </a>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:trading-history' %}">Trading History</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu">
+                        <span>Account & Transactions</span>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:fund_account' %} ">
+                            <i class="fa fa-long-arrow-alt-down"></i>
+                            <span class="menu-text">Fund Account</span>
+                            <span class="badge badge-pill badge-primary">New</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:withdraw-funds' %}">
+                            <i class="fa fa-file-export"></i>
+                            <span class="menu-text">Withdraw Funds</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">
+                            <i class="fa fa-user"></i>
+                            <span class="menu-text">Profile View</span>
+                        </a>
+                    </li>
+                    <li>
+                        {% if  request.user.verificationdocument.verified %}
+                        <a href="{% url 'main:id-verification' %}">
+                            <i class="fa fa-id-card"></i>
+                            <span class="menu-text">ID Verification</span>
+                            <span class="badge badge-pill badge-success">Verified</span>
+                        </a>
+                        {% else %}
+                        <a href="#">
+                            <i class="fa fa-id-card"></i>
+                            <span class="menu-text">ID Verification</span>
+                        </a>
+                        {% endif %}
+                        
+                    </li>
+                    <li>
+                        <a href="{% url 'main:account-upgrade' %}">
+                            <i class="fa fa-level-up-alt"></i>
+                            <span class="menu-text">Account Upgrade</span>
+
+                            <!-- Display current Account -->
+                            {% if request.user.profile.select_plan %}                            
+                            <span class="badge badge-pill badge-warning">{{ request.user.profile.select_plan }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'main:logout' %}">
+                            <i class="fa fa-power-off"></i>
+                            <span class="menu-text">Logout</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade profile-text-color" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="profile-body">
+                        <span id="profile-full-name">Full Name: {{ request.user.profile.first_name }} {{ request.user.profile.last_name }} </span>
+                        <span id="profile-invested-amount">Invested: 0</span>
+                        <span id="profile-country">Country: {{ request.user.profile.country }}</span>
+                        <span id="profile-phone-number">Phone Number: {{ request.user.profile.phone_number }}</span>
+                        <!-- conditional balance display -->
+                        {% if request.user.balance.amount %}
+                            <span id="profile-balance">Balance: $ {{ request.user.balance.amount }}</span>                        
+                        {% else %}
+                            <span id="profile-balance">Balance: $ 0 </span>
+                        {% endif %}
+                        <span id="profile-account-id">Account ID: {{ request.user.user_id }} </span>
+                        <span id="profile-joined">Date Joined: {{ request.user.date_joined }} </span>
+                        <span id="full-name">Account status: {% if  request.user.verificationdocument.verified %}Verified {% else %} UnVerified {% endif %} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- end of modal -->
+{% endblock %}
