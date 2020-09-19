@@ -1,162 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-{% load static %}
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="expert option invesments dashboard">
-    <title>Dashboard</title>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Material Dashboard by Creative Tim
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="/static/css/material-dashboard.min.css" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="/static/css/demo/demo.css" rel="stylesheet" /> -->
 
-    <!-- using online links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
-
-    <!-- css files -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sidebar-style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sidebar-themes.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'css/verificaiton-fix.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/sam.css' %}"> -->
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
-
-    <!-- owl carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
-
+    <!-- dashboard css file -->
+    <link rel="stylesheet" href="/static/css/dashboard.css">
 </head>
 
-<body>
 {% block dashboard %}
 {% endblock %}
- 
-<!-- using online scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
-    </script>
-    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<!--   Core JS Files   -->
+<script src="/static/js/core/jquery.min.js"></script>
+<script src="/static/js/core/popper.min.js"></script>
+<script src="/static/js/core/bootstrap-material-design.min.js"></script>
+<script src="/static/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!-- Plugin for the momentJs  -->
+<script src="/static/js/plugins/moment.min.js"></script>
+<!--  Plugin for Sweet Alert -->
+<script src="/static/js/plugins/sweetalert2.js"></script>
+<!-- Forms Validations Plugin -->
+<script src="/static/js/plugins/jquery.validate.min.js"></script>
+<!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+<script src="/static/js/plugins/jquery.bootstrap-wizard.js"></script>
+<!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+<script src="/static/js/plugins/bootstrap-selectpicker.js js/plugins/bootstrap-selectpicker.js"></script>
+<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+<script src="/static/js/plugins/bootstrap-datetimepicker.min.js"></script>
+<!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+<script src="/static/js/plugins/jquery.dataTables.min.js"></script>
+<!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+<script src="/static/js/plugins/bootstrap-tagsinput.js"></script>
+<!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+<script src="/static/js/plugins/jasny-bootstrap.min.js"></script>
+<!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+<script src="/static/js/plugins/fullcalendar.min.js"></script>
+<!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+<script src="/static/js/plugins/jquery-jvectormap.js"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/static/js/plugins/nouislider.min.js"></script>
+<!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<!-- Library for adding dinamically elements -->
+<script src="/static/js/plugins js/plugins/arrive.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="/static/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="/static/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/static/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="/static/js/demo/demo.js"></script>
+<script>
+    $(document).ready(function() {
+        $().ready(function() {
+            $sidebar = $('.sidebar');
 
-    <!-- owl carousel js files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
-    
-    <!-- in body javascript -->
-    <script>
-      $(function ($) {
-        // dashboard sidebar functionality
+            $sidebar_img_container = $sidebar.find('.sidebar-background');
 
-      // Dropdown menu
-      $(".sidebar-dropdown > a").click(function () {
-          $(".sidebar-submenu").slideUp(200);
-          if ($(this).parent().hasClass("active")) {
-              $(".sidebar-dropdown").removeClass("active");
-              $(this).parent().removeClass("active");
-          } else {
-              $(".sidebar-dropdown").removeClass("active");
-              $(this).next(".sidebar-submenu").slideDown(200);
-              $(this).parent().addClass("active");
-          }
+            $full_page = $('.full-page');
 
-      });
+            $sidebar_responsive = $('body > .navbar-collapse');
 
-      //toggle sidebar
-      $("#toggle-sidebar").click(function () {
-          $(".page-wrapper").toggleClass("toggled");
-      });
-      //Pin sidebar
-      $("#pin-sidebar").click(function () {
-          if ($(".page-wrapper").hasClass("pinned")) {
-              // unpin sidebar when hovered
-              $(".page-wrapper").removeClass("pinned");
-              $("#sidebar").unbind( "hover");
-          } else {
-              $(".page-wrapper").addClass("pinned");
-              $("#sidebar").hover(
-                  function () {
-                      console.log("mouseenter");
-                      $(".page-wrapper").addClass("sidebar-hovered");
-                  },
-                  function () {
-                      console.log("mouseout");
-                      $(".page-wrapper").removeClass("sidebar-hovered");
-                  }
-              )
+            window_width = $(window).width();
 
-          }
-      });
+            fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
+            if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                    $('.fixed-plugin .dropdown').addClass('open');
+                }
 
-      //toggle sidebar overlay
-      $("#overlay").click(function () {
-          $(".page-wrapper").toggleClass("toggled");
-      });
+            }
 
-      //switch between themes 
-      var themes = "default-theme legacy-theme chiller-theme ice-theme cool-theme light-theme";
-      $('[data-theme]').click(function () {
-          $('[data-theme]').removeClass("selected");
-          $(this).addClass("selected");
-          $('.page-wrapper').removeClass(themes);
-          $('.page-wrapper').addClass($(this).attr('data-theme'));
-      });
+            $('.fixed-plugin a').click(function(event) {
+                // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                if ($(this).hasClass('switch-trigger')) {
+                    if (event.stopPropagation) {
+                        event.stopPropagation();
+                    } else if (window.event) {
+                        window.event.cancelBubble = true;
+                    }
+                }
+            });
 
-      // switch between background images
-      var bgs = "bg1 bg2 bg3 bg4";
-      $('[data-bg]').click(function () {
-          $('[data-bg]').removeClass("selected");
-          $(this).addClass("selected");
-          $('.page-wrapper').removeClass(bgs);
-          $('.page-wrapper').addClass($(this).attr('data-bg'));
-      });
+            $('.fixed-plugin .active-color span').click(function() {
+                $full_page_background = $('.full-page-background');
 
-      // toggle background image
-      $("#toggle-bg").change(function (e) {
-          e.preventDefault();
-          $('.page-wrapper').toggleClass("sidebar-bg");
-      });
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
 
-      // toggle border radius
-      $("#toggle-border-radius").change(function (e) {
-          e.preventDefault();
-          $('.page-wrapper').toggleClass("boder-radius-on");
-      });
+                var new_color = $(this).data('color');
 
-      //custom scroll bar is only used on desktop
-      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          $(".sidebar-content").mCustomScrollbar({
-              axis: "y",
-              autoHideScrollbar: true,
-              scrollInertia: 300
-          });
-          $(".sidebar-content").addClass("desktop");
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-color', new_color);
+                }
 
-      }
-      });
+                if ($full_page.length != 0) {
+                    $full_page.attr('filter-color', new_color);
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.attr('data-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .background-color .badge').click(function() {
+                $(this).siblings().removeClass('active');
+                $(this).addClass('active');
+
+                var new_color = $(this).data('background-color');
+
+                if ($sidebar.length != 0) {
+                    $sidebar.attr('data-background-color', new_color);
+                }
+            });
+
+            $('.fixed-plugin .img-holder').click(function() {
+                $full_page_background = $('.full-page-background');
+
+                $(this).parent('li').siblings().removeClass('active');
+                $(this).parent('li').addClass('active');
 
 
-    // owl carousel
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin: 10,
-        // nav: true, 
-        responsive : {
-            0:{
-                items: 1, 
-                // nav: true
-            },
-        }
+                var new_image = $(this).find("img").attr('src');
+
+                if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    $sidebar_img_container.fadeOut('fast', function() {
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $sidebar_img_container.fadeIn('fast');
+                    });
+                }
+
+                if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                    $full_page_background.fadeOut('fast', function() {
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                        $full_page_background.fadeIn('fast');
+                    });
+                }
+
+                if ($('.switch-sidebar-image input:checked').length == 0) {
+                    var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                    var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                    $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                    $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                }
+
+                if ($sidebar_responsive.length != 0) {
+                    $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                }
+            });
+
+            $('.switch-sidebar-image input').change(function() {
+                $full_page_background = $('.full-page-background');
+
+                $input = $(this);
+
+                if ($input.is(':checked')) {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar_img_container.fadeIn('fast');
+                        $sidebar.attr('data-image', '#');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page_background.fadeIn('fast');
+                        $full_page.attr('data-image', '#');
+                    }
+
+                    background_image = true;
+                } else {
+                    if ($sidebar_img_container.length != 0) {
+                        $sidebar.removeAttr('data-image');
+                        $sidebar_img_container.fadeOut('fast');
+                    }
+
+                    if ($full_page_background.length != 0) {
+                        $full_page.removeAttr('data-image', '#');
+                        $full_page_background.fadeOut('fast');
+                    }
+
+                    background_image = false;
+                }
+            });
+
+            $('.switch-sidebar-mini input').change(function() {
+                $body = $('body');
+
+                $input = $(this);
+
+                if (md.misc.sidebar_mini_active == true) {
+                    $('body').removeClass('sidebar-mini');
+                    md.misc.sidebar_mini_active = false;
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                } else {
+
+                    $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                    setTimeout(function() {
+                        $('body').addClass('sidebar-mini');
+
+                        md.misc.sidebar_mini_active = true;
+                    }, 300);
+                }
+
+                // we simulate the window Resize so the charts will get updated in realtime.
+                var simulateWindowResize = setInterval(function() {
+                    window.dispatchEvent(new Event('resize'));
+                }, 180);
+
+                // we stop the simulation of Window Resize after the animations are completed
+                setTimeout(function() {
+                    clearInterval(simulateWindowResize);
+                }, 1000);
+
+            });
+        });
     });
-w    </script>
+</script>
+<script>
+    $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
+
+    });
+</script>
 </body>
+
 </html>

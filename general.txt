@@ -1,1 +1,46 @@
 source ~/Documents/web_projects/venv/bin/activate && cd cryptolife
+
+ssh root@46.101.109.109
+
+
+CREATE DATABASE cryptolifeinvestment;
+CREATE USER cryptolife WITH PASSWORD 'cryptolifeinvestment';
+
+
+ALTER ROLE cryptolife SET client_encoding TO 'utf8';
+ALTER ROLE cryptolife SET default_transaction_isolation TO 'read committed';
+ALTER ROLE cryptolife SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE cryptolifeinvestment TO cryptolife;
+
+
+# Gunicorn configuration 
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=trader
+Group=www-data
+WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject
+ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/expertoptioninvestmentsproject.sock expertoptioninvestmentsproject.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+# nginx 
+server {
+    listen 80;
+    server_name expertoptioninvestments.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/trader/trading-site/expertoptioninvestmentsproject;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/trader/expertoptioninvestmentsproject.sock;
+    }
+}

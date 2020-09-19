@@ -1,131 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- css style sheet +-- scss --+  -->
-    <link rel="stylesheet" href="./static/css/main.css">
-
-    <!-- bootstrap link file  -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>crypto-life-investment</title>
-</head>
-<body>
+{% extends "main/base.html" %}
+  {% block body %}
+  {% load static %}
+  {% load widget_tweaks %}
     <!-- Navigation section  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mr-auto">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Trade <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Company</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col">
-          <button class="btn btn-success" type="button">Open Account</button>
-          <button class="btn btn-outline-secondary" type="button">Login</button>
-      </div>
-    </nav>
+    {% include "navbar/navbar.html" %}
 
-    <div class="container">
+    <div class="container push-up">
       <div class="row">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-4">
-          <form class="m-4">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+          <form class="m-4" method="POST">
+            {% csrf_token %}
             <div class="form">
+              <!-- Email -->
               <div class="col-lg">
-                <label for="validationServer01">First name</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                <label for="validationServer01">Email</label>
+                <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                {{ form.email|add_class:"form-control"|attr:'class:is-valid' }}
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
+
+              <!-- password 1 -->
               <div class="col-lg">
-                <label for="validationServer02">Last name</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                <label for="validationServer01">Enter Password</label>
+                <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                {{ form.password1|add_class:"form-control"|attr:'class:is-valid' }}
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
+
               <div class="col-lg">
-                <label for="validationServer04">Country</label>
-                <select class="custom-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>...</option>
-                </select>
-                <div id="validationServer04Feedback" class="invalid-feedback">
-                  Please select a valid state.
-                </div>
-              </div>
-            </div>
-            <div class="form">
-              <div class="col-lg ">
-                <label for="validationServer03">Phone</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-                <div id="validationServer03Feedback" class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer05">Zip</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-                <div id="validationServer05Feedback" class="invalid-feedback">
-                  Please provide a valid zip.
-                </div>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer02">Email</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="email" required>
+                <label for="validationServer01">Confirm Password</label>
+                <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
+                {{ form.password2|add_class:"form-control"|attr:'class:is-valid' }}
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-              <div class="col-lg">
-                <label for="validationServer03">Username</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Username" required>
-                <div class="invalid-feedback">
-                  Username taken!
-                </div>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer05">Password</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
-                <div id="validationServer05Feedback" class="invalid-feedback">
-                  Password should contain alpha-numeric and symbols.
-                </div>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer02">Referral</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="referral code" disabled>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer02">Zip Code</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="zip code" required>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer02">Account Type</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="account type" required>
-              </div>
-              <div class="col-lg">
-                <label for="validationServer02">Account Type</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="account currency" required>
-              </div>
-            </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
                 <label class="form-check-label" for="invalidCheck3">
@@ -135,106 +50,11 @@
                   You must agree before submitting.
                 </div>
               </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            </div> -->
+            <button class="btn btn-primary btn-block flat" type="submit">Submit form</button>
           </form>
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-3"></div>
       </div>
     </div>
-
-    <!-- footer section  -->
-    <div class="container-fluid bg-dark footer">
-      <div class="row">
-       <div class="col-lg m-5 footer">
-         <h3 class="text-white text-uppercase">crypto Life Investment</h3>
-       </div>
-       <div class="col-lg m-5 footer">
-         <h3 class="text-white text-uppercase">Trading</h3>
-         <ul class="text-success">
-           <li>Forex</li>
-           <li>Trader Advice</li>
-         </ul>
-       </div>
-       <div class="col-lg m-5 footer">
-         <h3 class="text-white text-uppercase">Trading Platforms</h3>
-         <ul class="text-success text-decoration-none">
-           <li>MT5 Desktop</li>
-           <li>MT5 Moblie</li>
-         </ul>
-       </div>
-       <div class="col-lg m-5 footer">
-         <h3 class="text-white text-uppercase">Analytics</h3>
-         <ul class="text-success">
-           <li>Information Security</li>
-           <li>Conflict of Interest</li>
-         </ul>
-       </div>
-       <div class="col-lg m-5 footer">
-         <h3 class="text-white text-uppercase">crypto Life Options</h3>
-         <ul class="text-success">
-          <li><a href="about.html"  class="text-decoration-none text-success">About us</a></li>
-          <li><a href="contact.html"  class="text-decoration-none text-success">Contact us</a></li>
-          <li><a href="safety-of-funds.html"  class="text-decoration-none text-success">Safety of Funds</a></li>
-       </div>
-      </div>
-       <div class="row footer-footer">
-         <div class="col-lg">
-           <!--<p>Prime24 Options is one of NAFD (National Association of Forex Dealers) initiators.</p>-->
-           <p class="text-secondary py-2">Crypto-life-investment is regulated by the US Financial Services Authority (License Number IS/560000).</p>
-
-           <!--</p>
-           <strong class="mb-1">HIGH RISK INVESTMENT WARNING:</strong> Trading foreign exchange on margin carries a high level of risk,
-            can result in losses and may not be suitable for everybody. Persons below 18 years of age are not eligible to open Individual Accounts with IK Partners Ltd. 
-            The high degree of leverage can work against you as well as for you.
-             Before deciding to trade foreign exchange or Contracts for Difference (“CFD’s”) you should carefully consider your trading objectives, 
-             level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial trading capital
-             and therefore you should not deposit money that you cannot afford to lose.
-             You should be aware of all the risks associated with foreign exchange and CFD trading,
-             and seek advice from an independent advisor if you have any doubts. 
-             Nothing on this site should be considered as an advertisement, offer or solicitation to use our services. 
-             The information contained in this site is intended for information purposes only. 
-             Therefore it should not be regarded as an offer or solicitation to any person in any jurisdiction in which
-             such an offer or solicitation is not authorised or to any person to whom it would be unlawful to make such an offer or solicitation, 
-             nor regarded as recommendation to buy, sell or otherwise deal with any particular currency or precious metal trade. 
-             If you are not sure about your local currency and spot metals trading regulations then you should leave this site immediately. 
-             information on this site is not directed at residents of the United States or any European Union member state and is not intended for distribution to,
-             or use by, any person in any country or jurisdiction where such distribution or use would be contrary to local law or regulation. 
-             The agent and Owner of Financial operations is IK Partners Ltd., registration No. 1616 CTD 2017, registered at: the Financial Services Centre,
-             Stoney Ground, Kingstown, St. Vincent & the Grenadines. Restricted Jurisdictions: We do not establish accounts to residents of certain jurisdictions including Japan, Canada and USA.
-           </p>-->
-           <p class="text-secondary py-2"><strong class="mb-1">RISK WARNING:</strong> Trading in Forex and Contracts for Difference (CFDs), which are leveraged products, 
-             is highly speculative and involves substantial risk of loss. It is possible to lose all your capital. 
-             Your capital is not guaranteed and may go down as well as up. Therefore, Forex and CFDs may not be suitable for all investors.
-              Only invest with money you can afford to lose. So please ensure that you fully understand the risks involved. 
-              Seek independent advice if necessary.</p>
-
-           <p class="text-secondary py-2">CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 
-             Over the past 12 months 54.6% of Crypto-life-investment Limited’s retail investor accounts lose money when trading CFDs with Crypto-life-investment Limited. 
-             You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
-
-
-           <p class="text-secondary py-2">Crypto-life-investment provides its services to all global citizens. Copyright © 2020 Crypto-life-investment All Rights Reserved.
-              <a href="#" class="text-success">Terms and Conditions</a> | <a href="#" class="text-success">Risk Disclosure</a>
-               * Prices displayed on the website may be affected by changes in currency exchange rate and price movements thereby affecting your investment return therefrom.
-                Crypto-life-investment Ltd is registered in US, 31 Beeston Road, Nottingham
-                | Company Registration Number: IS/560000 MFSA License Number: IS/560000.</p>
-         </div>
-       </div>
-     </div>
-
-
-
-
-
-
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}

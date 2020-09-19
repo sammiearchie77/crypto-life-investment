@@ -188,7 +188,7 @@ def account_upgrade(request):
 
 
 ''' account setup '''
-'''         registration / logout            '''
+'''       profile / registration / logout            '''
 # custom registration route
 from django.contrib.auth.forms import UserCreationForm
 def register(request):
@@ -269,8 +269,10 @@ def create_profile(request):
     context = {
         'profile_form': profile_form
     }
-    return render(request, 'main/profile.html', context)
+    return render(request, 'main/create-profile.html', context)
 
+def edit_profile(request):
+    return render(request, 'main/edit-profile.html')
 # logout route
 @login_required(login_url='/accounts/login')
 def logout_view(request):
