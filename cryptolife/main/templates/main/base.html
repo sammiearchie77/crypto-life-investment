@@ -1,98 +1,104 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% endblock %}</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptolife Investment</title>
+    <!-- bootstrap link file  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css" integrity="sha512-pn4RwKFKdSvaTRSYO5WIUGz89e1tJvWWUGRIBym1/k467SuMMjKKw/X5TXJYp2+WLmHumHivCJ2JAJppXF9SoA==" crossorigin="anonymous" />
+    <!-- main css  -->
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
 <body>
- {% block body %}
- {% endblock %}
-<!-- footer -->
-<footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3" id="column-1">
-          <h3>Superior Traders</h3>
-          <p>Superior Traders is one of the leading platforms in the UK offering Forex and Stocks Trading options. The company is also registered with the Financial Conduct Authority of the UK</p>
-        </div>
-        <div class="col-lg-3  column-2" id="about-footer">
-          <h3>About Superior Traders</h3>
-          <a href="{% url 'main:index' %}">Home</a>
-          <a href="{% url 'main:about' %}">About Superior Traders</a>
-          <a href="">Privacy Policy</a>
-          <a href="{% url 'main:rules' %}">Terms of Use</a>
-          <a href=""></a>              
-        </div>
-        <div class="col-lg-4" id="column-3">
-          <h3>Contacts</h3>
-          <section>
-            <h5>Postal adress</h5>
-            <p>United States Location:</p>
-          <span>1615 Nelson Ct, Hewlett, NY, 11557</span>
-          <hr>
-            <p>Germany Location:</p>
-               <span>Hallesches Ufer 63 Lenningen Baden-Württemberg</span>
-          </section>
 
+    {% block body %} {% endblock %}
+    <!-- footer -->
+    <!-- footer section  -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-lg m-5">
+                <h3 class="text-white text-uppercase">crypto Life Investment</h3>
+            </div>
+            <div class="col-lg m-5">
+                <h3 class="text-white text-uppercase">Trading</h3>
+                <ul class="text-success">
+                    <li>Forex</li>
+                    <li>Trader Advice</li>
+                </ul>
+            </div>
+            <div class="col-lg m-5">
+                <h3 class="text-white text-uppercase">Trading Platforms</h3>
+                <ul class="text-success text-decoration-none">
+                    <li>MT5 Desktop</li>
+                    <li>MT5 Moblie</li>
+                </ul>
+            </div>
+            <div class="col-lg m-5">
+                <h3 class="text-white text-uppercase">Analytics</h3>
+                <ul class="text-success">
+                    <li>Information Security</li>
+                    <li>Conflict of Interest</li>
+                </ul>
+            </div>
+            <div class="col-lg m-5">
+                <h3 class="text-white text-uppercase">crypto Life Options</h3>
+                <ul class="text-success">
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Affiliate program</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-lg-2" id="column-4">
-          <h3>Social</h3>
-            <a href="fb.com">
-              <i class="fab fa-facebook"></i> 
-            </a>
-            <a href="twitter.com">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="linkedin.com">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="youtube.com">
-              <i class="fab fa-youtube"></i>
-            </a>
+        <div class="row p-5 ">
+            <div class="col-lg">
+                <!--<p>Crypto Life Investments is one of NAFD (National Association of Forex Dealers) initiators.</p>-->
+                <p class="text-secondary py-2">crypto life investment ltd. is regulated by the US Financial Services Authority (License Number IS/560000).</p>
+
+                <!--</p>
+         <strong class="mb-1">HIGH RISK INVESTMENT WARNING:</strong> Trading foreign exchange on margin carries a high level of risk,
+          can result in losses and may not be suitable for everybody. Persons below 18 years of age are not eligible to open Individual Accounts with IK Partners Ltd. 
+          The high degree of leverage can work against you as well as for you.
+           Before deciding to trade foreign exchange or Contracts for Difference (“CFD’s”) you should carefully consider your trading objectives, 
+           level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial trading capital
+           and therefore you should not deposit money that you cannot afford to lose.
+           You should be aware of all the risks associated with foreign exchange and CFD trading,
+           and seek advice from an independent advisor if you have any doubts. 
+           Nothing on this site should be considered as an advertisement, offer or solicitation to use our services. 
+           The information contained in this site is intended for information purposes only. 
+           Therefore it should not be regarded as an offer or solicitation to any person in any jurisdiction in which
+           such an offer or solicitation is not authorised or to any person to whom it would be unlawful to make such an offer or solicitation, 
+           nor regarded as recommendation to buy, sell or otherwise deal with any particular currency or precious metal trade. 
+           If you are not sure about your local currency and spot metals trading regulations then you should leave this site immediately. 
+           information on this site is not directed at residents of the United States or any European Union member state and is not intended for distribution to,
+           or use by, any person in any country or jurisdiction where such distribution or use would be contrary to local law or regulation. 
+           The agent and Owner of Financial operations is IK Partners Ltd., registration No. 1616 CTD 2017, registered at: the Financial Services Centre,
+           Stoney Ground, Kingstown, St. Vincent & the Grenadines. Restricted Jurisdictions: We do not establish accounts to residents of certain jurisdictions including Japan, Canada and USA.
+         </p>-->
+                <p class="text-secondary py-2"><strong class="mb-1">RISK WARNING:</strong> Trading in Forex and Contracts for Difference (CFDs), which are leveraged products, is highly speculative and involves substantial risk of loss. It is possible to lose all your capital. Your
+                    capital is not guaranteed and may go down as well as up. Therefore, Forex and CFDs may not be suitable for all investors. Only invest with money you can afford to lose. So please ensure that you fully understand the risks involved.
+                    Seek independent advice if necessary.</p>
+
+                <p class="text-secondary py-2">CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Over the past 12 months 54.6% of crypto life investment Limited’s retail investor accounts lose money when trading CFDs with crypto life investment
+                    Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
+
+
+                <p class="text-secondary py-2">crypto life investment Ltd. provides its services to all global citizens. Copyright © 2020 crypto life investment ltd. All Rights Reserved.
+                    <a href="#" class="text-success">Terms and Conditions</a> | <a href="#" class="text-success">Risk Disclosure</a> * Prices displayed on the website may be affected by changes in currency exchange rate and price movements thereby affecting
+                    your investment return therefrom. crypto life investment Ltd is registered in US, 31 Beeston Road, Nottingham | Company Registration Number: IS/560000 MFSA License Number: IS/560000.</p>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
-    <div id="copyright" class="text-center">
-      <p>&copy; Copyright 2018 All rights Reserved.</p>
-    </div>
-
-  <!-- jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- owl carousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>
-    $(document).ready(function(){
-    $(".owl-carousel").owlCarousel({
-        margin: 10, 
-        loop: true, 
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items: 1
-            }
-        },
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true
-    });
-    });
-</script>
-  
-  <!-- scripts -->
-  <script>
-    (function(b, i, t, C, O, I, N) {
-        window.addEventListener('load', function() {
-            if (b.getElementById(C)) return;
-            I = b.createElement(i), N = b.getElementsByTagName(i)[0];
-            I.src = t;
-            I.id = C;
-            N.parentNode.insertBefore(I, N);
-        }, false)
-    })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
-  </script>
+    <!-- Javascript files -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ home, privacy policy, Payment Policy views
 from .views import index, logout_view,contact, about, register,terms_and_condition, privacy_policy, safety_of_funds
 
 # dashboard routes
-from .views import dashboard, id_verification, account_upgrade, create_profile, fund_account, trading_history, withdraw_funds
+from .views import dashboard, id_verification, account_upgrade, create_profile,edit_profile, fund_account, trading_history, withdraw_funds
 
 app_name = 'main'
 
@@ -31,6 +31,7 @@ urlpatterns = [
     path('account/upgrade', account_upgrade, name='account-upgrade'),
     # registration and login routes
     path('register/', register, name='register'),
-    path('profile/create', create_profile, name='profile-form' )
+    path('profile/create', create_profile, name='profile-form' ), 
+    path('profile/edit', edit_profile, name='edit-profile' )
     
 ]

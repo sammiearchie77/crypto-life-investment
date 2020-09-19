@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    # django humanize
-    'django.contrib.humanize'
+    'widget_tweaks',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +80,17 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cryptolifeinvestment',
+        'USER': 'cryptolife',
+        'PASSWORD':  'cryptolifeinvestment',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -127,3 +138,5 @@ MEDIA_URL = '/media/'
 
 # using custom user model 
 AUTH_USER_MODEL = 'main.CustomUser'
+
+LOGIN_REDIRECT_URL = 'main:dashboard'

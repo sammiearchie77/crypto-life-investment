@@ -40,6 +40,10 @@ desktop mode
         color: grey;
         text-decoration: none;
     }
+
+    .push-up{
+        margin-top: 8%;
+    }
     /* nav dropdown */
     #trade-portion,
     #education-portion,
