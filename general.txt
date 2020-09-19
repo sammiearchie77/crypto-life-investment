@@ -10,7 +10,7 @@ CREATE USER cryptolife WITH PASSWORD 'cryptolifeinvestment';
 ALTER ROLE cryptolife SET client_encoding TO 'utf8';
 ALTER ROLE cryptolife SET default_transaction_isolation TO 'read committed';
 ALTER ROLE cryptolife SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE cryptolifeinvestment TO crypto;
+GRANT ALL PRIVILEGES ON DATABASE cryptolifeinvestment TO cryptolife;
 
 
 # Gunicorn configuration 
