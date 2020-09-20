@@ -2,6 +2,12 @@
     border-radius: 0;
 }
 
+body {
+    background: rgb(0,23,31);
+    background: linear-gradient(192deg, rgba(0,23,31,1) 0%, rgba(9,83,171,1) 100%);
+    color: #d7d7d7;
+}
+
 
 /* 
 
