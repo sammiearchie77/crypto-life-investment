@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptolife Investment</title>
+    <title>{% block title %}{% endblock %}</title>
     <!-- bootstrap link file  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -99,6 +99,79 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
     <script src="/static/js/main.js"></script>
+    <script>
+        // ajax form validation 
+        $(document).ready(function(){
+            // login validation
+            $('#id_username').change(function(){
+            var email = $(this).val();
+            $.ajax({
+                url:'/validate/login',
+                data: {
+                    'email': email,
+                },
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data.is_taken)
+                    if (data.is_taken){
+                        $('#id_username').removeClass('is-invalid')
+                        // $('#id_username').addClass('is-valid')
+                        // document.getElementById('emailHelp').innerHTML = 'Your Email Exists!'
+                        $('#emailHelp').addClass('valid-feedback')
+                    }
+                    else {
+                        $('#id_username').addClass('is-invalid')
+                        document.getElementById('emailHelp').innerHTML = 'No User with this Email Exists'
+                        $('#emailHelp').addClass('invalid-feedback')
+                    }
+                }
+                
+            })
+            })
+
+            //
+        })
+
+        $(document).ready(function(){
+
+
+            // registration validation 
+            $('#id_email').change(function(){
+            var email = $(this).val();
+
+            $.ajax({
+                url:'/validate/register',
+                data: {
+                    'email': email,
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.is_user){
+                        // remove class from below
+                        $('#id_email').removeClass('is-invalid')
+                        $('#id_email').removeClass('valid-feedback')
+
+                        // show that a user exists and display appropriate feedback
+                        $('#id_email').addClass('is-invalid')
+                        document.getElementById('emailHelp').innerHTML = 'A User with this Email Exists!'
+                        $('#emailHelp').addClass('invalid-feedback')
+                    }
+                    else {
+                        // remove the class from above
+                        $('#id_email').removeClass('is-invalid')
+                        $('#id_email').removeClass('invalid-feedback')
+
+                        // show that a user does not exist and display appropriate feedback
+                        $('#id_email').addClass('is-valid')
+                        document.getElementById('emailHelp').innerHTML = 'Good to Go !'
+                        $('#emailHelp').addClass('valid-feedback')
+                    }
+                }
+                
+            })
+        })
+    })
+    </script>
 </body>
 
 </html>

@@ -9,6 +9,9 @@ from .views import index, logout_view,contact, about, register,terms_and_conditi
 # dashboard routes
 from .views import dashboard, id_verification, account_upgrade, create_profile,edit_profile, fund_account, trading_history, withdraw_funds
 
+# validation routes
+from .views import validate_login, validate_registration
+
 app_name = 'main'
 
 urlpatterns = [
@@ -32,6 +35,10 @@ urlpatterns = [
     # registration and login routes
     path('register/', register, name='register'),
     path('profile/create', create_profile, name='profile-form' ), 
-    path('profile/edit', edit_profile, name='edit-profile' )
+    path('profile/edit', edit_profile, name='edit-profile' ),
+
+    # validation routes
+    path('validate/login', validate_login, name='validate-login'),
+    path('validate/register', validate_registration, name='validate-registration')
     
 ]

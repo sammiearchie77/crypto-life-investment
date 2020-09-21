@@ -25,7 +25,7 @@ SECRET_KEY = 'gxre8fa*%kb85$&a$nj*!oar7$c+antu$u)jei%er1ys8b2yly'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '46.101.109.109', 'cryptolifeinvestment.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1' ,'46.101.109.109', 'cryptolifeinvestment.com']
 
 
 # Application definition

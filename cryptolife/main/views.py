@@ -280,3 +280,26 @@ def logout_view(request):
     logout(request)
     return redirect('main:index')
 
+from django.contrib.auth import get_user_model
+from django.http import JsonResponse
+
+
+# ajax form validation
+def validate_login(request):
+    email = request.GET.get('email', None)
+    User = get_user_model()
+    data = {
+        'is_taken': User.objects.filter(email__iexact=email).exists()
+    }
+    return JsonResponse(data)
+
+
+def validate_registration(request):
+    email = request.GET.get('email', None)
+    password = request.GET.get('password1', None)
+    User = get_user_model()
+    data = {
+        'is_user': User.objects.filter(email__iexact=email).exists(),
+        'password': password,
+    }
+    return JsonResponse(data)

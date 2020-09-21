@@ -143,12 +143,16 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <div class="form-group">
                                                         <label class="bmd-label-floating"> Select Plan</label>
                                                         {{ profile_form.select_plan|add_class:'form-control' }}
-                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                        <label class="bmd-label-floating"> Profile Picture</label>
+                                                        {{ profile_form.profile_picture|add_class:'form-control-file' }}
                                                 </div>
                                             </div>
                                         </div>

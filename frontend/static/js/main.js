@@ -28,6 +28,15 @@ $(document).ready(function() {
         $('#about-portion').toggle()
     })
 
+    // trade portion mobile
+    $('#trade-mobile-link').click(function(){
+        $('#trade-portion-mobile').toggle()
+        alert('clicked')
+    })
+
+
+
+
     /* 
        mobile nav bar 
     */
