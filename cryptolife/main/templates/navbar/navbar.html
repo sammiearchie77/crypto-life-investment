@@ -29,22 +29,20 @@
 <nav id="custom-nav" class="mobile">
     <div class="container">
         <div class="row">
-            <div class="col-5">
-                <img src="/static/img/logo_transparent.png" alt="" class="nav-img">
+            <div class="col-4"></div>
+            <div class="col-4 my-2">
+                <a href="{% url 'main:index' %}">
+                    <img src="/static/img/logo_transparent.png" alt="" class="nav-img">
+                </a>
             </div>
             <div class="col-4"></div>
-            <div class="col-3">
-                <button class="btn btn-primary" id="nav-toggle">
-                    <span class="fas fa-bars"></span>
-                </button>
-            </div>
             <div class="col-12">
                 <div class="row">
                     <div class="col-6">
-                        <button class="btn btn-success btn-block">Open Account</button>
+                        <a href="{% url 'main:register' %}" class="btn btn-success btn-block">Open Account</a>
                     </div>
                     <div class="col-6">
-                        <button class="btn btn-outline-success btn-block">Login</button>
+                        <a href="{% url 'login' %}" class="btn btn-outline-success btn-block">Login</a>
                     </div>
                 </div>
 
@@ -54,203 +52,7 @@
     </div>
 </nav>
 
-<!-- mobile nav link -->
-<div id="nav-link-mobile">
-    <a id="trade-mobile-link">Trade <span class="fas fa-chevron-right ml-2"></span></a>
-    <a id="education-mobile-link">Ananlytics <span class="fas fa-chevron-right ml-2"></span></a>
-    <a id="about-mobile-link">About Company <span class="fas fa-chevron-right ml-2"></span></a>
-</div>
 
-<!-- mobile - trade / education / about   -->
-<div class="mobile">
-    <div id="trade-portion-mobile ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-cogs mr-3"></span> Trading Tools</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Forex
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Commodity Future
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Share Indexes
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Energy Carriers
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-credit-card mr-3"></span> Trading Account</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Payment Methods
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Withdrawal Informationa and General Fees
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-scroll mr-3"></span> Terms Of Trade</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Order Execution
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Spreads
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Swaps
-                            </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                                Trading Hours
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!--  Eduction portion-mobile  -->
-    <div id="education-portion-mobile ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-education-cap mr-3"></span> Education Center</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Webinars
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Calendar Webinars
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                   E-books
-                </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-chart-line mr-3"></span> Analytics</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Traders Advices
-                </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading">Terms Of Trade</h3>
-                    <p>
-                        On the page “Education and analytics” you will find valuable data that will support you. We offer you a chance to gain proficiency with every one of the parts of exchanging, including value gauges, hazard and capital administration and exchanging brain
-                        science. Analytics is a piece of achievement of any broker. We get ready to market examination and gather data about most recent news once a day. Here you will likewise discover advantageous and simple to-utilize monetary timetable.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- about portion -->
-    <div id="about-portion-mobile">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-building mr-3"></span> CryptoLife Investment</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="{% url 'main:about' %}">
-                    About Us
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="{% url 'main:contact' %}">
-                    Contact Us
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Affiliate Program
-                </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-gavel mr-3"></span> Regulation</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Regulation Explained
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="">
-                    Account verification documents
-                </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h3 class="trading-heading"><span class="fas fa-shield-alt mr-3"></span> Terms Of Trade</h3>
-                    <ul>
-                        <li class="nav-dropdown">
-                            <a href="{% url 'main:privacy-policy' %}">
-                    Privacy Policy
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="{% url 'main:safety-of-funds' %}">
-                    Safety of Funds
-                </a>
-                        </li>
-                        <li class="nav-dropdown">
-                            <a href="{% url 'main:terms-and-conditions' %}">
-                    Terms and conditions
-                </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <button class="btn-close">
-        <span class="fas fa-plus"></span>
-    </button>
-    </div>
-</div>
 
 
 <!-- desktop version -->

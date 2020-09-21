@@ -297,11 +297,9 @@ def validate_login(request):
 def validate_registration(request):
     email = request.GET.get('email', None)
     password = request.GET.get('password1', None)
-    print(email, password)
     User = get_user_model()
     data = {
         'is_user': User.objects.filter(email__iexact=email).exists(),
         'password': password,
     }
-    print(data)
     return JsonResponse(data)

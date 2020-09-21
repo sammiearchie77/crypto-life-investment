@@ -138,23 +138,30 @@
             // registration validation 
             $('#id_email').change(function(){
             var email = $(this).val();
-            var password = $(this).val()
 
             $.ajax({
                 url:'/validate/register',
                 data: {
                     'email': email,
-                    'password':password
                 },
                 dataType: 'json',
                 success: function(data) {
                     if (data.is_user){
-                        // $('#id_email').removeClass('is-invalid')
+                        // remove class from below
+                        $('#id_email').removeClass('is-invalid')
+                        $('#id_email').removeClass('valid-feedback')
+
+                        // show that a user exists and display appropriate feedback
                         $('#id_email').addClass('is-invalid')
                         document.getElementById('emailHelp').innerHTML = 'A User with this Email Exists!'
                         $('#emailHelp').addClass('invalid-feedback')
                     }
                     else {
+                        // remove the class from above
+                        $('#id_email').removeClass('is-invalid')
+                        $('#id_email').removeClass('invalid-feedback')
+
+                        // show that a user does not exist and display appropriate feedback
                         $('#id_email').addClass('is-valid')
                         document.getElementById('emailHelp').innerHTML = 'Good to Go !'
                         $('#emailHelp').addClass('valid-feedback')
