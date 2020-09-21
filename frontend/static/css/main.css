@@ -8,6 +8,16 @@ body {
     color: #d7d7d7;
 }
 
+/* modal  */
+.modal-verification-image {
+    position: relative;
+    left: 60px;
+}
+
+#exampleModalShortTitle {
+    position: relative;
+    left: 141px;
+}
 
 /* 
 
