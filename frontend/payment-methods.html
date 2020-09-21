@@ -25,9 +25,11 @@ The above copyright notice and this permission notice shall be included in all c
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
+    <link rel="stylesheet" href="./static/css/main.css">
     <link href="./static/css/material-dashboard.min.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./static/css/demo/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body class="">
@@ -196,7 +198,7 @@ The above copyright notice and this permission notice shall be included in all c
                                 <div class="card-body">
                                     <img class="" src="./static/img/VISA.jpeg" width="200px">
                                     <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target=".bd-example-modal-lg">Proceed to payments</button>
-                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="LargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="col-lg-8 m-5 py-5">
@@ -235,10 +237,10 @@ The above copyright notice and this permission notice shall be included in all c
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                       <div class="modal-content">
                                                         <div class="modal-header">
-                                                          <h5 class="modal-title modal-title text-center text-success" id="exampleModalShortTitle">Payment Successfull</h5>
+                                                          <h5 class="modal-title modal-title text-center" id="exampleModalShortTitle">Payment Successfull</h5>
                                                         </div>
                                                         <div class="modal-body">
-                                                          <img src="./static/img/payments.png" alt="">
+                                                          <img src="./static/img/payments.png" class="modal-verification-image">
                                                         </div>
                                                         <div class="modal-footer">
                                                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -254,13 +256,13 @@ The above copyright notice and this permission notice shall be included in all c
                                 <!-- master card body  -->
                                 <div class="card-body">
                                     <img class="" src="./static/img/mastercard.jpg" width="200px">
-                                    <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target=".bd-example-modal-lg">proceed to payments</button>
-                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target=".bd-example-modal-lg1">proceed to payments</button>
+                                    <div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="col-lg-8 m-5 py-5">
                                                 <form>
-                                                    <img src="./static/img/mastercard.jpg" width="100px">
+                                                    <img src="./static/img/mastercard.jpg" width="200px">
                                                     <div class="form-group">
                                                     <input type="name" class="form-control" id="cardName" placeholder="John Doe" required>
                                                     <span class="bmd-help">We'll never share your card name with anyone else.</span>
@@ -287,20 +289,20 @@ The above copyright notice and this permission notice shall be included in all c
                                                     </div>
                                                 </form>
                                                 <span class="form-group bmd-form-group"> <!-- needed to match padding for floating labels -->
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Save & Proceed</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">Save & Proceed</button>
                                                 </span>
                                                   <!-- Modal for comfirmation -->
-                                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                       <div class="modal-content">
                                                         <div class="modal-header">
-                                                          <h5 class="modal-title modal-title text-center text-success" id="exampleModalShortTitle">Payment Successfull</h5>
+                                                          <h5 class="modal-title modal-title" id="exampleModalShortTitle">Payment Successfull</h5>
                                                         </div>
                                                         <div class="modal-body">
-                                                          <img src="./static/img/payments.png" alt="">
+                                                          <img src="./static/img/payments.png" class="modal-verification-image">
                                                         </div>
                                                         <div class="modal-footer">
-                                                          <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                                                         </div>
                                                       </div>
                                                     </div>
@@ -323,7 +325,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     <h6 class="card-category text-gray">CEO / Co-Founder</h6>
                                     <h4 class="card-title">Samuel Archibong</h4>
                                     <p class="card-description">
-                                        Don't be scared of investing your time and money on a better future. They are so many destinies tied to your. Dream big, place big, execute big..
+                                        Don't be scared of investing your time and money on a better future. They are so many destinies tied to your waist. Dream big, place big, execute big..
                                     </p>
                                     <a href="https://www.a1techonologiesio.online" class="btn btn-primary btn-round">Follow</a>
                                 </div>

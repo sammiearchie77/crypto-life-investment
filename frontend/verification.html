@@ -25,6 +25,7 @@ The above copyright notice and this permission notice shall be included in all c
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
+    <link rel="stylesheet" href="./static/css/main.css">
     <link href="./static/css/material-dashboard.min.css" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./static/css/demo/demo.css" rel="stylesheet" />
@@ -56,13 +57,13 @@ The above copyright notice and this permission notice shall be included in all c
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="payment-methods.html">
                             <i class="material-icons">payment</i>
                             <p>payment methods</p>
                         </a>
                     </li>
                     <li class="nav-item active ">
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="verification.html">
                             <i class="material-icons">login</i>
                             <p>verification</p>
                         </a>
@@ -202,60 +203,82 @@ The above copyright notice and this permission notice shall be included in all c
                             Verify Your account by providing us with a vaild document (ID card). Drivers Licence, Valid Work ID Card, Passport, etc are accepted. Please do not try to upload a fake document as our support teams reviews every document uploaded. Detected fake documents will lead to immediate suspension of account! Once Uploaded, Our support team reviews your document and gets back to you within 3 working days. The uploaded documents are for verification purposes only and are deleted once confirmed. You will be notified via email once your document has been verified. Choose your document and click on the verify button.
                         </p>
                     </div>
-                    <div id="verification-form">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile"><span>Driver's License, Passport, e.t.c</span></label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-text" placeholder="Enter Type (e.g Drivers License)" required>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">click to upload the front document</label>
+                                </div>
+                                <div class="form-group">
+                                  <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile2">click to upload the back document</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile2">
+                                </div>
+                                <hr>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    submit
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <img src="./static/img/verified.jpeg" class="modal-verification-image">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- <div id="verification-form">
                         <form action="" class="form-group" method="POST" enctype="multipart/form-data">
-                            <div class="row">
+                            <div class="row"> -->
                                 <!-- document type -->
-                                <div class="col-lg-3">
+                                <!-- <div class="col-lg-3">
                                     <label for="">
                                         Document Type: <span class="display-5">e.g Driver's License, Passport, e.t.c</span>
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
                                    <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
-                                </div>
+                                </div> -->
 
                                 <!-- Document front page -->
-                                <div class="col-lg-3 mt-2">
-                                    <label for="">
+                                <!-- <div class="col-lg-3 mt-2">
+                                    <label for="exampleFormControlFile1">
                                         Front Document</span>
                                     </label>
-                                </div>
-                                <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-2"> 
-                                </div>
-
+                                </div> -->
+                                <!-- <div class="col-lg-9">
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1"> 
+                                </div> -->
                                 <!-- document back page -->
-                                <div class="col-lg-3 mt-2">
-                                    <label for="">
+                                <!-- <div class="col-lg-3 mt-2">
+                                    <label for="exampleFormControlFile2">
                                         Back Document</span>
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-3"> 
+                                   <input type="file" class="form-control-file" id="exampleFormControlFile2">
                                    <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- verification container content -->
-            <div class="container" style="min-height: 245px;">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                 <h3 class="text-dark text-center py-4">
-                                    <span>Identification Status</span>
-                                </h3>
-                                <div class="col-sm verification-image py-4">
-                                    <img src="../frontend/static/images/logos/verified.png" style="height: 200px;" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
                                 </div>
@@ -269,10 +292,10 @@ The above copyright notice and this permission notice shall be included in all c
                                     </a>
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                                    <h4 class="card-title">Alec Thompson</h4>
+                                    <h6 class="card-category text-gray">Director / Founder</h6>
+                                    <h4 class="card-title">Joseph Braide</h4>
                                     <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                        Go big or go home.
                                     </p>
                                     <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
                                 </div>
@@ -287,7 +310,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <ul>
                             <li>
                                 <a href="https://www.creative-tim.com">
-                  Creative Tim
+                  A1 technologiesio
                 </a>
                             </li>
                             <li>
@@ -312,7 +335,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <script>
                             document.write(new Date().getFullYear())
                         </script>, made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                        <a href="https://www.a1technologiesio.online" target="_blank">A1 technologiesio</a> for a better web.
                     </div>
                 </div>
             </footer>
@@ -600,6 +623,10 @@ The above copyright notice and this permission notice shall be included in all c
             });
         });
     </script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+     <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 </body>
 
 </html>
