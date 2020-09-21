@@ -9,49 +9,58 @@
       <div class="row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-          <form class="m-4" method="POST">
+          <div class="">
+            <h2>Registration Form</h2>
+            <ul>
+              <li>
+                <span>
+                  Your password must contain at least 8 characters.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Your password can't be a commonly used password.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Your password can't be entirely numeric.
+                </span>
+              </li>
+            </ul>
+          </div>
+          <form class="" method="POST">
             {% csrf_token %}
             <div class="form">
               <!-- Email -->
               <div class="col-lg">
                 <label for="validationServer01">Email</label>
                 <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
-                {{ form.email|add_class:"form-control"|attr:'class:is-valid' }}
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
+                {{ form.email|add_class:"form-control"}}
+                <small id="emailHelp">
+                  Enter a valid Email
+                </small>
               </div>
 
               <!-- password 1 -->
               <div class="col-lg">
                 <label for="validationServer01">Enter Password</label>
                 <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
-                {{ form.password1|add_class:"form-control"|attr:'class:is-valid' }}
-                <div class="valid-feedback">
-                  Looks good!
+                {{ form.password1|add_class:"form-control"}}
+                <div class="" id="email">
+                  <!-- Looks good! -->{{ form.password1.errors }}
                 </div>
               </div>
 
               <div class="col-lg">
                 <label for="validationServer01">Confirm Password</label>
                 <!-- <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required> -->
-                {{ form.password2|add_class:"form-control"|attr:'class:is-valid' }}
+                {{ form.password2|add_class:"form-control"}}
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
-            <!-- <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-                <label class="form-check-label" for="invalidCheck3">
-                  Agree to terms and conditions
-                </label>
-                <div  id="invalidCheck3Feedback" class="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div> -->
-            <button class="btn btn-primary btn-block flat" type="submit">Submit form</button>
+            <button class="btn btn-success btn-block flat py-3 mt-3" type="submit">Submit form</button>
           </form>
         </div>
         <div class="col-lg-3"></div>

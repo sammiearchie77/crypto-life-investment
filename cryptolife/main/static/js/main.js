@@ -50,4 +50,21 @@ $(document).ready(function() {
             $('#custom-nav').removeClass('sticky-nav')
         }
     })
+
+    // validation for user information 
+    $('#id_username').change(function(){
+        var username = $(this).val();
+        $.ajax({
+            url:'/validate/username',
+            data: {
+                'username': username
+            },
+            dataType: 'json',
+            success: function(data) {
+                if (data.is_taken){
+                    alert('I am already a user')
+                }
+            }
+        })
+    })
 })

@@ -22,8 +22,8 @@ After=network.target
 [Service]
 User=trader
 Group=www-data
-WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject
-ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/expertoptioninvestmentsproject.sock expertoptioninvestmentsproject.wsgi:application
+WorkingDirectory=/home/trader/trading-site/cryptolife
+ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/cryptolife.sock cryptolife.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
@@ -32,15 +32,15 @@ WantedBy=multi-user.target
 # nginx 
 server {
     listen 80;
-    server_name expertoptioninvestments.com;
+    server_name cryptolifeinvestment.com;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/trader/trading-site/expertoptioninvestmentsproject;
+        root /home/trader/trading-site/cryptolife;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/trader/expertoptioninvestmentsproject.sock;
+        proxy_pass http://unix:/home/trader/cryptolife.sock;
     }
 }
