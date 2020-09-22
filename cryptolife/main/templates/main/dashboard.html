@@ -1,6 +1,7 @@
 {% extends "dashboard/dashboard-base.html" %}
 {% block title %} Dashboard {% endblock %}
 {% load humanize %}
+{% load widget_tweaks %}
 {% block dashboard %}
     <div class="wrapper ">
         {% include "dashboard/sidebar.html" %}
@@ -136,6 +137,8 @@
                         </div>
                     </div>
                     <!-- end of dashboard information -->
+
+                    {% if request.user.verificationdocument.verified %}
                     <!-- chart -->
                     <div class="row">
                         <div class="col-md-6">
@@ -275,7 +278,103 @@
                             </div>
                         </div>
                     </div>
+                    {% else %}
+                    <div class="container mb-4">
+                        <div class="verification-form-bg">
+                            <div id="verify-form-header">
+                                <h3 class="text-center">
+                                    Fund and Verify Your Account.
+                                </h3>
+                            </div>
+                            <div id="verification-form-message">
+                                <p>
+                                    Verify Your account by providing us with a vaild document (ID card). Drivers Licence, Valid Work ID Card, Passport, etc are accepted. Please do not try to upload a fake document as our support teams reviews every document uploaded. Detected fake documents will lead to immediate suspension of account! Once Uploaded, Our support team reviews your document and gets back to you within 3 working days. The uploaded documents are for verification purposes only and are deleted once confirmed. You will be notified via email once your document has been verified. Choose your document and click on the verify button.
+                                </p>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <form method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile"><span>Driver's License, Passport, e.t.c</span></label>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ verification_form.document_type|add_class:"form-control"|attr:"placeholder:Enter Type (e.g Drivers License)" }}
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="front-document">click to upload the front document</label>
+                                        </div>
+                                        <div class="form-group">
+                                          {{ verification_form.front_document|add_class:"form-control-file"|attr:"placeholder:Enter Type (e.g Drivers License)"|attr:"id:front-document"}}
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="back-document">click to upload the back document</label>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ verification_form.back_document|add_class:"form-control-file"|attr:"id:back-document" }}
+                                        </div>
+                                        
+                                        <!-- Button trigger modal -->
+                                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                            submit
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <img src="./static/img/verified.jpeg" class="modal-verification-image">
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- <div id="verification-form">
+                                <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+                                    <div class="row"> -->
+                                        <!-- document type -->
+                                        <!-- <div class="col-lg-3">
+                                            <label for="">
+                                                Document Type: <span class="display-5">e.g Driver's License, Passport, e.t.c</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-9">
+                                           <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
+                                        </div> -->
+            
+                                        <!-- Document front page -->
+                                        <!-- <div class="col-lg-3 mt-2">
+                                            <label for="exampleFormControlFile1">
+                                                Front Document</span>
+                                            </label>
+                                        </div> -->
+                                        <!-- <div class="col-lg-9">
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1"> 
+                                        </div> -->
+                                        <!-- document back page -->
+                                        <!-- <div class="col-lg-3 mt-2">
+                                            <label for="exampleFormControlFile2">
+                                                Back Document</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-9">
+                                           <input type="file" class="form-control-file" id="exampleFormControlFile2">
+                                           <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> -->
+                        </div>
+                    </div>
+                    {% endif %}
+                    
                 </div>
+
+                
             </div>
 
             <!-- end of charts -->
@@ -529,47 +628,32 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="card">
                         <div class="card-header card-header-warning">
-                            <h4 class="card-title">Employees Stats</h4>
-                            <p class="card-category">New employees on 15th September, 2016</p>
+                            <h4 class="card-title">Transaction History</h4>
+                            <p class="card-category">Shows Your Transaction Information</p>
                         </div>
                         <div class="card-body table-responsive">
                             <table class="table table-hover">
                                 <thead class="text-warning">
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Salary</th>
-                                    <th>Country</th>
+                                    <th>Date</th>
+                                    <th>Transaction ID</th>
+                                    <th>Amount</th>
+                                    <th>Type</th>
                                 </thead>
                                 <tbody>
+                                    {% for trans in transaction  %}
                                     <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                        <td>$36,738</td>
-                                        <td>Niger</td>
+                                        <td>{{ trans.date }}</td>
+                                        <td>{{ trans.transaction_id }}</td>
+                                        <td>$ {{ trans.amount }} </td>
+                                        <td>{{ trans.type }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Minerva Hooper</td>
-                                        <td>$23,789</td>
-                                        <td>Curaçao</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Sage Rodriguez</td>
-                                        <td>$56,142</td>
-                                        <td>Netherlands</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Philip Chaney</td>
-                                        <td>$38,735</td>
-                                        <td>Korea, South</td>
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

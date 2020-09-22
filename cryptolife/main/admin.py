@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Profile, Balance, InvestedAmount, Signals, BTCbalance, VerificationDocument
-from .models import DailyInvestments
+from .models import DailyInvestments, Transaction
 
 '''
     custom user admin fieldset
@@ -79,6 +79,13 @@ class VerificationDocumentAdmin(admin.ModelAdmin):
 @admin.register(DailyInvestments)
 class DailyInvestmentsAdmin(admin.ModelAdmin):
     list_display = ['user', 'amount']
+
+# transaction history
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_display = ['transaction_id', 'date']
+    
+
     
 
     

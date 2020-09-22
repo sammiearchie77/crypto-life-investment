@@ -11,7 +11,7 @@ from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDo
 
 # models
 from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument
-from .models import CustomUser
+from .models import CustomUser, Transaction
 from django.db.models import Sum
 
 # password reset 
@@ -67,6 +67,7 @@ def dashboard(request):
     invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
     btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    transaction_details = Transaction.objects.filter(user=user)
 
     # id verification logic
     if request.method == 'POST':
@@ -99,7 +100,8 @@ def dashboard(request):
         'invested': invested,
         'btc_balance': btc_balance,
         'daily_investments': daily_investments, 
-        'verification_form': verification_form
+        'verification_form': verification_form, 
+        'transaction':transaction_details
     }
     return render(request, 'main/dashboard.html', context)
 
@@ -155,6 +157,7 @@ def withdraw_funds(request):
 from django.contrib.auth import get_user_model
 from .models import CustomUser
 
+@login_required(login_url='login')
 def id_verification(request):
     if request.method == 'POST':
         verification_form = VerificationDocumentForm(request.POST,request.FILES)
