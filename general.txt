@@ -1,5 +1,9 @@
 source ~/Documents/web_projects/venv/bin/activate && cd cryptolife
 
+#copy static file script
+cp -r ./frontend/static ./cryptolife/main
+
+
 ssh root@46.101.109.109
 
 

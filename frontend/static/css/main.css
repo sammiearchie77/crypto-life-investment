@@ -4,7 +4,7 @@
 
 body {
     background: rgb(0,23,31);
-    background: linear-gradient(192deg, rgba(0,23,31,1) 0%, rgba(9,83,171,1) 100%);
+    background: #012547;
     color: #d7d7d7;
 }
 
@@ -58,7 +58,7 @@ desktop mode
     }
 
     .push-up{
-        margin-top: 8%;
+        margin-top: 8% !important;
     }
     /* nav dropdown */
     #trade-portion,
@@ -208,6 +208,13 @@ desktop mode
     #info-icon {
         border-radius: 80%;
         box-shadow: 0 0 0 9px #00a975, 0 0 0 42px rgba(0, 169, 117, .4), 0 0 0 71px rgba(0, 169, 117, .2);
+    }
+    /* steps to trade */
+    .s-t-gen > h5 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 1.5rem 0;
     }
     /* client protection and payment method */
     #payment-method-home {
