@@ -107,8 +107,9 @@ desktop mode
     }
     /* plan */
     .plan-header {
-        background: #153d68;
-        color: white;
+        /* background: #e6c4a4; */
+        background: #85e3eb;
+        color: #156768;
         padding: 14% 0;
     }
     .plan-header>h3 {
