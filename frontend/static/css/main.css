@@ -2,11 +2,11 @@
     border-radius: 0;
 }
 
-/* body {
+body {
     background: rgb(0,23,31);
     background: linear-gradient(192deg, rgba(0,23,31,1) 0%, rgba(9,83,171,1) 100%);
     color: #d7d7d7;
-} */
+}
 
 /* modal  */
 .modal-verification-image {
@@ -102,12 +102,12 @@ desktop mode
     .why-crypto-icon {
         font-size: 2.2rem;
         text-align: center;
-        color: #2e77c3;
+        color: #ddd;
         padding: 13% 6rem;
     }
     /* plan */
     .plan-header {
-        background: #2e77c3;
+        background: #153d68;
         color: white;
         padding: 14% 0;
     }
@@ -118,20 +118,18 @@ desktop mode
         background-color: grey;
         color: white;
         padding: 7% 0;
+        border-radius: 4px 0px;
     }
     .plan-features {
         border-left: 2px solid grey;
         border-right: 2px solid grey;
         border-bottom: 2px solid grey;
         margin-bottom: 10%;
+        box-shadow: 6px 8px rgb(126, 125, 125);
+        border-radius: 4px 0px;
     }
     .plan-features>p {
         padding: 4% 0;
-    }
-
-    .bronze {
-        background: linear-gradient(to right, #6A3805, #ad8a56);
-        color: #f5f5f5;
     }
 
     .bronze-btn {
@@ -144,11 +142,6 @@ desktop mode
         background: linear-gradient(to left, #6A3805, #ad8a56);
         color: #f5f5f5;
         border: 2px solid #f0f8ff;
-    }
-
-    .silver {
-        background: linear-gradient(to right, #d7d7d7, #b4b4b4);
-        color: #f3f3f3;
     }
     
     .silver-btn {
@@ -163,10 +156,6 @@ desktop mode
        
     }
     
-    .gold {
-        background: linear-gradient(to right, #FFD700, #c9b037 );
-        color: #656;
-    }
     .gold-btn {
         background: linear-gradient(to right, #FFD700, #c9b037 );
         color: #656;
@@ -177,9 +166,7 @@ desktop mode
         color: #656;
         border: 2px solid #f0f8ff;
     }
-    .diamond {
-        background: linear-gradient(to right, #b9f2ff, #70d1f4);
-    }
+    
     .diamond-btn {
         background: linear-gradient(to right, #b9f2ff, #70d1f4);
         color: #f5f5f5;
@@ -276,8 +263,8 @@ desktop mode
         width: 70%;
     }
     #nav-link-mobile>a {
-        color: black;
-        /* margin-right: 6%; */
+        color: white;
+        margin-right: 6%;
         display: block;
         z-index: 6;
     }
@@ -286,9 +273,9 @@ desktop mode
         text-decoration: none;
     }
     /* nav dropdown */
-    #trade-portion-mobile,
-    #education-portion-mobile,
-    #about-portion-mobile {
+    #trade-portion,
+    #education-portion,
+    #about-portion {
         background: rgba(0, 0, 0, 0.6);
         position: absolute;
         width: 100%;
@@ -296,15 +283,13 @@ desktop mode
         z-index: 5;
         /* display: none; */
     }
-    #trade-portion-mobile > .container > .row > .col-lg-4{
+    #trade-portion-mobile {
         background: rgba(30, 30, 30, 1)
     }
     .trading-heading {
-        background-color: black;
         color: white;
         font-size: 1.4rem;
         margin: 4% 0;
-        padding: 3% 4% ;
     }
     .nav-dropdown {
         /* list-style: disc;s */
