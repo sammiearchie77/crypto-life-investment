@@ -121,22 +121,24 @@ from django.contrib.auth.hashers import check_password
 @login_required(login_url='/accounts/login')
 def withdraw_funds(request): 
     user = request.user
-    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    user_balance = Balance.objects.filter(user=user)
+    balance = user_balance.aggregate(amount=Sum('amount'))
+    print(user_balance)
     form = WithdrawalForm(request.POST)
     userPassword = request.user.password
-    if request.method == 'POST':
-        messages.success(request, 'Withdrawal pending please wait a shortwhile')
-        
+    if request.method == 'POST':     
         
         if form.is_valid():
             form.save(commit=False)
+            amount = form.cleaned_data.get('amount')
+            print(amount)
+            import time 
+            time.sleep(5)
             password = form.cleaned_data.get('password')
-
             match_password = check_password(password, userPassword)
             # messages.success(request, 'Withdraw Successful')
             
             if match_password:
-                print('passwords matched')
                 form.save()
                 return redirect('main:dashboard')
             else:
@@ -223,19 +225,19 @@ def create_profile(request):
     # POST request form logic
     if request.method == 'POST':
         # request user instance
-        profile_form = ProfileForm(request.POST,instance=request.user, files=request.FILES)
-        if profile_form.is_valid():
+        form = ProfileForm(request.POST,instance=request.user, files=request.FILES)
+        if form.is_valid():
             # gather profile form data
-            first_name = profile_form.cleaned_data.get('first_name')
-            last_name = profile_form.cleaned_data.get('last_name')
-            phone_number = profile_form.cleaned_data.get('phone_number')
-            street_address = profile_form.cleaned_data.get('street_address')
-            city = profile_form.cleaned_data.get('city')
-            state = profile_form.cleaned_data.get('state')
-            postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
-            profile_picture = profile_form.cleaned_data.get('profile_picture')
-            country = profile_form.cleaned_data.get('country')
-            select_plan = profile_form.cleaned_data.get('select_plan')
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            phone_number = form.cleaned_data.get('phone_number')
+            street_address = form.cleaned_data.get('street_address')
+            city = form.cleaned_data.get('city')
+            state = form.cleaned_data.get('state')
+            postal_or_zip_code = form.cleaned_data.get('postal_or_zip_code')
+            profile_picture = form.cleaned_data.get('profile_picture')
+            country = form.cleaned_data.get('country')
+            select_plan = form.cleaned_data.get('select_plan')
             
             '''fetch profile of currently registered and logged in user first'''
             # request user
@@ -258,24 +260,39 @@ def create_profile(request):
             )
 
             # save the profile data to the form model 
-            profile_form.save()
+            form.save()
 
             # redirect to the dashboard
             return redirect('main:dashboard')
 
         else:
             # print profile form errors to the console
-            print(profile_form.errors)
+            print(form.errors)
     else:
         # GET profile form
-        profile_form = ProfileForm()
+        form = ProfileForm()
     context = {
-        'profile_form': profile_form
+        'form': form
     }
     return render(request, 'main/create-profile.html', context)
 
+# get object or 404
+from django.shortcuts import get_object_or_404
+
 def edit_profile(request):
-    return render(request, 'main/edit-profile.html')
+    user = request.user
+    instance = get_object_or_404(Profile, user=user)
+    print(user)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=instance)
+        if form.is_valid():
+            form.save()     
+    else:
+        form = ProfileForm(instance=instance)     
+    context = {
+        'form': form
+    }
+    return render(request, 'main/edit-profile.html', context)
 # logout route
 @login_required(login_url='/accounts/login')
 def logout_view(request):

@@ -26,7 +26,7 @@ urlpatterns = [
     path('safety-of-funds', safety_of_funds, name='safety-of-funds'),
     # dashboard routes
     path('dashboard/', dashboard, name="dashboard"),
-    path('fund-account/', fund_account, name='fund_account'), 
+    path('fund-account/', fund_account, name='fund-account'), 
     path('trading-history/', trading_history, name='trading-history'),
     path('withdraw-funds/', withdraw_funds, name='withdraw-funds'),
     path('id-verification/', id_verification, name='id-verification'), 

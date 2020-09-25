@@ -1,119 +1,291 @@
 {% extends "dashboard/dashboard-base.html" %}
 {% block dashboard %}
-<div class="page-wrapper default-theme sidebar-bg bg1">
-      
-{% include "dashboard/sidebar.html" %}
-
-        <!-- dashboard-content  -->
-        <main class="page-content">
-            <div id="overlay" class="overlay"></div>
-            <div id="bread-crumb-dashboard">
-                <div class="container">
-             <!-- logo on dashboard -->
-             <div id="dashboard-logo-top-heading">
+{% block title %}
+  Fund Account
+{% endblock  %}
+{% load humanize %}
+{% load widget_tweaks %}
+<div class="wrapper ">
+    {% include "dashboard/sidebar.html" %}
+    
+    <div class="main-panel">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <a class="navbar-brand" href="#">Fund Account</a>
             </div>
-          <!-- bread crumb -->
-          <div class="bread-crumb-dashboard-inner">
-            <h3>Dashboard</h3> <a href="">Home</a> / <span>Dashboard</span>
-          </div>   
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+  </button>
+            <div class="collapse navbar-collapse justify-content-end">
+                <form class="navbar-form">
+                    <div class="input-group no-border">
+                        <input type="text" value="" class="form-control" placeholder="Search...">
+                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+          <i class="material-icons">search</i>
+          <div class="ripple-container"></div>
+        </button>
+                    </div>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">person</i>
+                            <p class="d-lg-none d-md-block">
+                                Account
+                            </p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-            
-            
-            <!-- stock prices slider -->
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                {
-                "symbols": [
-                {
-                    "proName": "FOREXCOM:SPXUSD",
-                    "title": "S&P 500"
-                },
-                {
-                    "proName": "FOREXCOM:NSXUSD",
-                    "title": "Nasdaq 100"
-                },
-                {
-                    "proName": "FX_IDC:EURUSD",
-                    "title": "EUR/USD"
-                },
-                {
-                    "proName": "BITSTAMP:BTCUSD",
-                    "title": "BTC/USD"
-                },
-                {
-                    "proName": "BITSTAMP:ETHUSD",
-                    "title": "ETH/USD"
-                }
-                ],
-                "colorTheme": "light",
-                "isTransparent": false,
-                "displayMode": "adaptive",
-                "locale": "en"
-            }
-                </script>
-            </div>
-            <!-- TradingView Widget END -->  
-            <div class="container">
-                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
-                    <span>Toggle Sidebar</span>
-                </a>
-            </div>
-            <!-- payment methods -->
-            <div class="container">
-                <div class="row">
-                    <!-- bitcoin  -->
-                    <div class="col-lg-4">
-                        <img src="https://capitalmarket.online/image/bitcoin.jpg" alt="" class="dashboard-payment-image my-3">
-                            <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-block flat-button" data-toggle="modal" data-target="#bitcoin-payment-modal">
-                            select
-                        </button>
+    </nav>
+    <!-- End Navbar -->
 
-                        <!-- bitcoin Modal -->
-                        <div class="modal fade profile-text-color" id="bitcoin-payment-modal" tabindex="-1" role="dialog" aria-labelledby="bitcoin-payment-modalTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Bitcoin Deposit</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                            <h5>All Bitcoin Payments should be sent to the bitcoin address below:</h5>
-
-                                            <img src="/static/images/bitcoin-address-qr-code.jpeg" alt="">
-                                            <br>
-                                            <span class="message-success mt-3">3GKvigR4ivNYz5oYDPipfuTPD2JA281FML</span>
-
-
-                                            <h5>Once we confirm your payment, your account will be funded instantly.</h5>
-                                            <span class="message-error">
-                                                For more information contact us immediately through our official email address support@expertoptioninvestments.com
-                                                Thank you for using  Expert Option Investments
-                                            </span>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
+    <!-- dashboard amounts et al -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-warning card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">attach_money</i>
                             </div>
+                            <p class="card-category">Balance</p>
+                            {% if balance.amount %}
+                            <h3 class="card-title">$ {{ balance.amount|intcomma }}
+                            </h3>
+                            {% else %}
+                            <h3 class="card-title">$ 0
+                            </h3>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> Just Updated
                             </div>
                         </div>
                     </div>
-
-                                        
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-success card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">store</i>
+                            </div>
+                            <p class="card-category">Invested</p>
+                            {% if invested.amount %}
+                            <h3 class="card-title">$ {{ invested.amount|intcomma }}
+                            </h3>
+                            {% else %}
+                            <h3 class="card-title">$ 0
+                            </h3>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">date_range</i> Last 24 Hours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">network_check</i>
+                            </div>
+                            <p class="card-category">Signal</p>
+                            <h3 class="card-title">75</h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> Just Updated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-info card-header-icon">
+                            <div class="card-icon">
+                                <i class="fa fa-credit-card"></i>
+                            </div>
+                            <p class="card-category">Withdrawn</p>
+                            {% if withdraw.amount %}
+                            <h3 class="card-title">$ {{ withdraw.amount|intcomma }}
+                            </h3>
+                            {% else %}
+                            <h3 class="card-title">$ 0
+                            </h3>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <i class="material-icons">update</i> Just Updated
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        
-        
-            <!-- end of dashboard content -->
-        </main>
-        <!-- page-content" -->
-    </div>
-    <!-- page-wrapper -->
-{% endblock %}
+            <!-- end of dashboard information -->
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 ">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title">payment methods</h4>
+                                <p class="card-category">Choose your payment method</p>
+                            </div>
+                            <!-- btc address  -->
+                            <div class="card-body">
+                                <img class="" src="/static/img/bitcoin card.jpg" width="200px">
+                                <button class="btn  btn-primary m-3 py-2" data-toggle="modal" data-target=".btc-modal-lg">click for more info</button>
+                                <div class="modal fade btc-modal-lg" tabindex="-1" role="dialog" aria-labelledby="LargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="col-lg-8 mb-5 py-5">
+                                            <form>
+                                                <h4>Deposit your Funds to the btc wallet below. </h4>
+                                                <h3>Btc address</h3>
+                                                <p>14S5dbWAirsPH2zCJHYjVY1Xhe4T4q9wn7</p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- visa card body  -->
+                            <div class="card-body">
+                                <img class="" src="/static/img/VISA.jpeg" width="200px">
+                                <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target=".bd-example-modal-lg">Proceed to payments</button>
+                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="LargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="col-lg-8 m-5 py-5">
+                                            <form>
+                                                <img src="/static/img/VISA.jpeg" width="100px">
+                                                <div class="form-group">
+                                                <input type="name" class="form-control" id="cardName" placeholder="John Doe" required>
+                                                <span class="bmd-help">We'll never share your card name with anyone else.</span>
+                                                <span class="bmd-help">Our security team has you covered &#128512;</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="number" class="form-control" id="cardNumber" placeholder="**** **** **** 3456" required>
+                                                    <span class="bmd-help">We'll never share your card details with anyone else.</span>
+                                                    <span class="bmd-help">Our security team has you covered &#128512;</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="billingAddress1" class="bmd-label-floating">Billing Address:</label>
+                                                    <input type="text" class="form-control" id="exampleInputName1" required>
+                                                </div>
+                                            </form>
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                <label for="exampleInputNumber" class="bmd-label-floating">CVC:</label>
+                                                <input type="number" class="form-control" id="exampleInputNumber" required>
+                                                </div>
+                                                <div class="form-group">
+                                                <label for="month" class="bmd-label-floating">Year:</label>
+                                                <input type="month" class="form-control" id="exampleInputDate1" required> 
+                                                </div>
+                                            </form>
+                                            <span class="form-group bmd-form-group"> <!-- needed to match padding for floating labels -->
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Save & proceed</button>
+                                            </span>  
+                                              <!-- Modal for comfirmation-->
+                                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title modal-title text-center" id="exampleModalShortTitle">Payment Successfull</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <img src="/static/img/payments.png" class="modal-verification-image">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- master card body  -->
+                            <div class="card-body">
+                                <img class="" src="/static/img/mastercard.jpg" width="200px">
+                                <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target=".bd-example-modal-lg1">proceed to payments</button>
+                                <div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="col-lg-8 m-5 py-5">
+                                            <form>
+                                                <img src="/static/img/mastercard.jpg" width="200px">
+                                                <div class="form-group">
+                                                <input type="name" class="form-control" id="cardName" placeholder="John Doe" required>
+                                                <span class="bmd-help">We'll never share your card name with anyone else.</span>
+                                                <span class="bmd-help">Our security team has you covered &#128512;</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="number" class="form-control" id="cardNumber" placeholder="**** **** **** 3456" required>
+                                                    <span class="bmd-help">We'll never share your card details with anyone else.</span>
+                                                    <span class="bmd-help">Our security team has you covered &#128512;</span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="billingAddress1" class="bmd-label-floating">billing Address:</label>
+                                                    <input type="text" class="form-control" id="exampleInputName1" required>
+                                                </div>
+                                            </form>
+                                            <form class="form-inline">
+                                                <div class="form-group">
+                                                <label for="exampleInputNumber" class="bmd-label-floating">CVC:</label>
+                                                <input type="number" class="form-control" id="exampleInputNumber" required>
+                                                </div>
+                                                <div class="form-group">
+                                                <label for="month" class="bmd-label-floating">Year:</label>
+                                                <input type="month" class="form-control" id="exampleInputDate1" required> 
+                                                </div>
+                                            </form>
+                                            <span class="form-group bmd-form-group"> <!-- needed to match padding for floating labels -->
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">Save & Proceed</button>
+                                            </span>
+                                              <!-- Modal for comfirmation -->
+                                              <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title modal-title" id="exampleModalShortTitle">Payment Successfull</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <img src="/static/img/payments.png" class="modal-verification-image">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock  %}

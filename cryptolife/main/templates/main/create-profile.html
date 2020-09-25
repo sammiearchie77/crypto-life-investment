@@ -76,26 +76,26 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title">Create Profile</h4>
+                                    <h4 class="card-title">Create Your Profile</h4>
                                     <p class="card-category">Complete your Form to create a new profile</p>
                                 </div>
                                 <div class="card-body">
                                     <form method="POST">
                                         {% csrf_token %}
-                                        <!-- {{ profile_form }} -->
+                                        <!-- {{ form }} -->
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Fist Name</label>
                                                     <!-- <input type="text" class="form-control"> -->
-                                                    {{ profile_form.first_name|add_class:'form-control'}}
+                                                    {{ form.first_name|add_class:'form-control'}}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Last Name</label>
                                                     <!-- <input type="text" class="form-control"> -->
-                                                    {{ profile_form.last_name|add_class:'form-control' }}
+                                                    {{ form.last_name|add_class:'form-control' }}
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Address</label>
-                                                    {{ profile_form.street_address|add_class:'form-control' }}                                                
+                                                    {{ form.street_address|add_class:'form-control' }}                                                
                                                 </div>
                                             </div>                                            
                                         </div>
@@ -112,13 +112,13 @@
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Phone Number</label>
                                                     <!-- <input type="text" class="form-control"> -->
-                                                    {{ profile_form.phone_number|add_class:'form-control' }}
+                                                    {{ form.phone_number|add_class:'form-control' }}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Postal / Zip Code</label>
-                                                    {{ profile_form.postal_or_zip_code|add_class:'form-control' }}
+                                                    {{ form.postal_or_zip_code|add_class:'form-control' }}
                                                 </div>
                                             </div>
                                         </div>
@@ -126,19 +126,19 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">City</label>
-                                                    {{ profile_form.city|add_class:"form-control"}}
+                                                    {{ form.city|add_class:"form-control"}}
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">State</label>
-                                                    {{ profile_form.state|add_class:'form-control' }}
+                                                    {{ form.state|add_class:'form-control' }}
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">Country</label>
-                                                    {{ profile_form.country|add_class:"form-control"}}
+                                                    {{ form.country|add_class:"form-control"}}
                                                 </div>
                                             </div>
                                         </div>
@@ -146,36 +146,19 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                         <label class="bmd-label-floating"> Select Plan</label>
-                                                        {{ profile_form.select_plan|add_class:'form-control' }}
+                                                        {{ form.select_plan|add_class:'form-control' }}
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                        <label class="bmd-label-floating"> Profile Picture</label>
-                                                        {{ profile_form.profile_picture|add_class:'form-control-file' }}
+                                                        <label class="bmd-label-floating" for="profile-picture"> click to add Profile Picture</label>
+                                                        {{ form.profile_picture|add_class:'form-control-file'|attr:'id:profile-picture' }}
                                                 </div>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary pull-right">Create Profile</button>
                                         <div class="clearfix"></div>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-profile">
-                                <div class="card-avatar">
-                                    <a href="javascript:;">
-                                        <img class="img" src="../assets/img/faces/marc.jpg" />
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                                    <h4 class="card-title">Alec Thompson</h4>
-                                    <p class="card-description">
-                                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                    </p>
-                                    <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
                                 </div>
                             </div>
                         </div>
