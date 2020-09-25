@@ -76,8 +76,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 # profile
 
 plans = (
-    ('Mini', 'Mini'),
-    ('Entry', 'Entry'),
+    ('Bronze', 'Bronze'),
     ('Silver', 'Silver'),
     ('Gold', 'Gold'),
     ('Platinum', 'Platinum')
