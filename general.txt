@@ -1,4 +1,4 @@
-source ~/Documents/web_projects/venv/bin/activate && cd cryptolife
+source ~/Documents/web_projects/venv/bin/activate && cd cryptolife && python manage.py runserver
 
 #copy static file script
 cp -r ./frontend/static ./cryptolife/main
