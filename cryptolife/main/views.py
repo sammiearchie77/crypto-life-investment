@@ -127,7 +127,7 @@ def withdraw_funds(request):
     form = WithdrawalForm(request.POST)
     userPassword = request.user.password
     if request.method == 'POST':     
-        
+        form = WithdrawalForm(request.POST)
         if form.is_valid():
             form.save(commit=False)
             amount = form.cleaned_data.get('amount')
