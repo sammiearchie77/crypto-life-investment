@@ -18,46 +18,57 @@
 
     {% block body %} {% endblock %}
     <!-- footer -->
-    <!-- footer section  -->
-    <div class="container-fluid bg-dark">
-        <div class="row">
-            <div class="col-lg m-5">
-                <h3 class="text-white text-uppercase">crypto Life Investment</h3>
-            </div>
-            <div class="col-lg m-5">
-                <h3 class="text-white text-uppercase">Trading</h3>
-                <ul class="text-success">
-                    <li>Forex</li>
-                    <li>Trader Advice</li>
-                </ul>
-            </div>
-            <div class="col-lg m-5">
-                <h3 class="text-white text-uppercase">Trading Platforms</h3>
-                <ul class="text-success text-decoration-none">
-                    <li>MT5 Desktop</li>
-                    <li>MT5 Moblie</li>
-                </ul>
-            </div>
-            <div class="col-lg m-5">
-                <h3 class="text-white text-uppercase">Analytics</h3>
-                <ul class="text-success">
-                    <li>Information Security</li>
-                    <li>Conflict of Interest</li>
-                </ul>
-            </div>
-            <div class="col-lg m-5">
-                <h3 class="text-white text-uppercase">crypto Life Options</h3>
-                <ul class="text-success">
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Affiliate program</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row p-5 ">
-            <div class="col-lg">
-                <!--<p>Crypto Life Investments is one of NAFD (National Association of Forex Dealers) initiators.</p>-->
-                <p class="text-secondary py-2">crypto life investment ltd. is regulated by the US Financial Services Authority (License Number IS/560000).</p>
+       <!-- footer section  -->
+   <div class="container-fluid bg-dark">
+    <div class="row">
+     <div class="col-lg">
+       <br>
+       <br>
+       <h3 class="text-white text-uppercase">crypto Life Investment</h3>
+     </div>
+     <div class="col-lg">
+       <br>
+       <br>
+       <h3 class="text-white text-uppercase">Home</h3>
+       <ul>
+         <li><a href="{% url 'login' %}" class="text-success text-decoration-none">Login</a></li>
+         <li><a href="{% url 'main:register' %}" class="text-success text-decoration-none">Register</a></li>
+       </ul>
+     </div>
+     <div class="col-lg">
+       <br>
+       <br>
+       <h3 class="text-white text-uppercase">Account types</h3>
+       <ul>
+        <li><a href="#" class="text-success text-decoration-none">Bronze</a></li>
+        <li><a href="#" class="text-success text-decoration-none">Silver</a></li>
+        <li><a href="#" class="text-success text-decoration-none">Gold</a></li>
+        <li><a href="#" class="text-success text-decoration-none">Diamond</a></li>
+       </ul>
+     </div>
+     <div class="col-lg">
+       <br>
+       <br>
+       <h3 class="text-white text-uppercase">Payment Options</h3>
+       <img src="./static/img/pay-logos.svg" alt="payment methods" width="200px">
+     
+     </div>
+     <div class="col-lg">
+        <br>
+        <br>
+       <h3 class="text-white text-uppercase">crypto Life Options</h3>
+       <ul class="text-success">
+          <li><a href="{% url 'main:about' %}" class="text-decoration-none text-success">About us</a></li>
+          <li><a href="{% url 'main:contact' %}" class="text-decoration-none text-success">Contact us</a></li>
+          <li><a href="{% url 'main:terms-and-conditions' %}" class="text-decoration-none text-success">terms & Conditions</a></li>
+          <li><a href="{% url 'main:safety-of-funds' %}" class="text-decoration-none text-success">Safety of funds</a></li>
+       </ul>
+     </div>
+    </div>
+     <div class="row">
+       <div class="col-lg">
+         <!--<p>Crypto Life Investments is one of NAFD (National Association of Forex Dealers) initiators.</p>-->
+         <p class="text-secondary py-2">crypto life investment ltd. is regulated by the US Financial Services Authority (License Number IS/560000).</p>
 
                 <!--</p>
          <strong class="mb-1">HIGH RISK INVESTMENT WARNING:</strong> Trading foreign exchange on margin carries a high level of risk,
@@ -93,6 +104,8 @@
             </div>
         </div>
     </div>
+    <!-- footer section  -->
+    
     <!-- Javascript files -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>

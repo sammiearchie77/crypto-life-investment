@@ -124,16 +124,16 @@ def withdraw_funds(request):
     user_balance = Balance.objects.filter(user=user)
     balance = user_balance.aggregate(amount=Sum('amount'))
     print(user_balance)
-    form = WithdrawalForm(request.POST)
     userPassword = request.user.password
     if request.method == 'POST':     
         form = WithdrawalForm(request.POST)
+        try:
+            print('balance is ' + user_balance.amount)
+        except NameError:
+            print('no balance here')
         if form.is_valid():
             form.save(commit=False)
             amount = form.cleaned_data.get('amount')
-            print(amount)
-            import time 
-            time.sleep(5)
             password = form.cleaned_data.get('password')
             match_password = check_password(password, userPassword)
             # messages.success(request, 'Withdraw Successful')
