@@ -11,7 +11,7 @@ from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDo
 
 # models
 from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument
-from .models import CustomUser, Transaction
+from .models import CustomUser, Transaction, Withdraw
 from django.db.models import Sum
 
 # password reset 
@@ -64,6 +64,7 @@ def dashboard(request):
     # dashboard info from database
     balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    withdraw = Withdraw.objects.filter(user=user).aggregate(amount=Sum('amount'))
     invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
     btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
@@ -101,7 +102,8 @@ def dashboard(request):
         'btc_balance': btc_balance,
         'daily_investments': daily_investments, 
         'verification_form': verification_form, 
-        'transaction':transaction_details
+        'transaction':transaction_details, 
+        'withdraw': withdraw
     }
     return render(request, 'main/dashboard.html', context)
 
@@ -109,7 +111,22 @@ def dashboard(request):
 from django.contrib import messages
 @login_required(login_url='/accounts/login')
 def fund_account(request):
-    return render(request, 'main/fund-account.html')
+    user = request.user
+    # dashboard info from database
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    withdraw = Withdraw.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    transaction_details = Transaction.objects.filter(user=user)
+
+    context = {
+        'balance': balance, 
+        'invested': invested,
+        'withdraw': withdraw
+    }
+    return render(request, 'main/fund-account.html', context)
 
 # transactions view 
 def trading_history(request):
@@ -127,10 +144,7 @@ def withdraw_funds(request):
     userPassword = request.user.password
     if request.method == 'POST':     
         form = WithdrawalForm(request.POST)
-        try:
-            print('balance is ' + user_balance.amount)
-        except NameError:
-            print('no balance here')
+        
         if form.is_valid():
             form.save(commit=False)
             amount = form.cleaned_data.get('amount')

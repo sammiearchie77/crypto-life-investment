@@ -132,8 +132,10 @@ class Notification(models.Model):
 
 # withdrawal
 class Withdraw(models.Model):
-    amount = models.DecimalField(max_digits=10, decimal_places=2)    
-    password = models.CharField(max_length=30, default = '')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    amount = models.PositiveIntegerField()
+
+    # password = models.CharField(max_length=30, default = '')
 
 # bitcoin balance
 class BTCbalance(models.Model):

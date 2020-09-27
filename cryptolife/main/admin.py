@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Profile, Balance, InvestedAmount, Signals, BTCbalance, VerificationDocument
-from .models import DailyInvestments, Transaction
+from .models import DailyInvestments, Transaction, Withdraw
 
 '''
     custom user admin fieldset
@@ -84,7 +84,12 @@ class DailyInvestmentsAdmin(admin.ModelAdmin):
 @admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):
     list_display = ['transaction_id', 'date']
+
+@admin.register(Withdraw)
+class WithdrawAdmin(admin.ModelAdmin):
+    list_display = ['amount']
     
+
 
     
 
