@@ -113,6 +113,13 @@ class Balance(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
 
+# contact
+class Contact(models.Model):
+    topic = models.CharField(max_length=150, default='')
+    name = models.CharField(max_length=150, default='')
+    email = models.EmailField(max_length=50, default='')
+    message = models.TextField()
+
 # invested amount
 class InvestedAmount(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

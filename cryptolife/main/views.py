@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDocumentForm
+from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDocumentForm, ContactForm
 
 # models
 from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument
@@ -34,8 +34,29 @@ def about(request):
     return render(request, 'main/about.html')
 
 # contact page
+# send mail thing
+from django.core.mail import send_mail
+
 def contact(request):
-    return render(request, 'main/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            topic = form.cleaned_data.get('topic')
+            name = form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+            message = form.cleaned_data.get('message')
+            send_mail(topic,message,'support@cryptolifeinvestment.com', [email,])
+
+            return redirect('main:home')
+        else:
+            print('form invalid')
+
+    else:
+        form = ContactForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'main/contact.html', context)
 
 # Privacy Policy
 def privacy_policy(request):

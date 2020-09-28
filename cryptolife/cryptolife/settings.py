@@ -140,3 +140,12 @@ MEDIA_URL = '/media/'
 AUTH_USER_MODEL = 'main.CustomUser'
 
 LOGIN_REDIRECT_URL = 'main:dashboard'
+
+
+# Email Stuff
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.cryptolifeinvestment.com'
+EMAIL_HOST_USER = 'support@cryptolifeinvestment.com'
+EMAIL_HOST_PASSWORD = '0nQ~!6djyhJ#'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

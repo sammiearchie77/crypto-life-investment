@@ -48,8 +48,10 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-2 m-5">
                 <h2 class="text-uppercase font-weight-light">write <strong>to us</strong></h2>
-                <form>
-                    <div class="form-group">
+                <form method="POST">
+                  {% csrf_token %}
+                  {{ form }}
+                    <!-- <div class="form-group">
                       <label for="exampleInputMessage1">Message Topic</label>
                       <input type="message" class="form-control" id="exampleInputMessage1" aria-describedby="messageHelp">
                     </div>
@@ -60,16 +62,16 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn btn-success">Submit</button>
                   </form>
             </div>
-            <div class="col-lg-4" id="message">
+            <!-- <div class="col-lg-4" id="message">
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Send a mail to support@cryptolifeinvestment"></textarea>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-3 m-5">
               <br>
               <br>

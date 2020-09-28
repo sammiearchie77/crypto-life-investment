@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Withdraw, VerificationDocument
+from .models import Profile, Withdraw, VerificationDocument, Contact
 
 
 # get_user_model
@@ -39,3 +39,8 @@ class VerificationDocumentForm(forms.ModelForm):
     class Meta:
         model = VerificationDocument
         fields = ('document_type','front_document', 'back_document')
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('topic', 'name', 'email', 'message')
