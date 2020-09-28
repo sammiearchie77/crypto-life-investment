@@ -1,4 +1,5 @@
 source ~/Documents/web_projects/venv/bin/activate && cd cryptolife && python manage.py runserver
+python manage.py makemigrations && python manage.py migrate
 
 #copy static file script
 cp -r ./frontend/static ./cryptolife/main
