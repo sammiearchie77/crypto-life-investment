@@ -154,10 +154,22 @@ class DailyInvestments(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) 
     amount = models.PositiveIntegerField()
 
+documents = (
+    ('Drivers License', 'Drivers License'),
+    ('US Passort/Card', 'US Passort/Card'),
+    ('US Military Card', 'US Military Card'),
+    ('Military Dependents Card', 'Military Dependents Card'),
+    ('Permananet Resident Card', 'Permananet Resident Card'),
+    ('Certificate of Citizenship', 'Certificate of Citizenship'),
+    ('Certificate of Naturalization', 'Certificate of Naturalization'),
+    ('Employment Authorization Document', 'Employment Authorization Document'),
+    ('Foreign Passport', 'Foreign Passport')
+    
+)
 # verification documents
 class VerificationDocument(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    document_type = models.CharField(max_length=30)
+    document_type = models.CharField(max_length=100, choices=documents)
     front_document = models.FileField(upload_to='doc/front_page/', blank=False, null=False)
     back_document = models.FileField(upload_to='doc/back_page/', blank=False, null=False)
     verified = models.BooleanField(default=False, blank=True)

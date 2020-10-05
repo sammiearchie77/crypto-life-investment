@@ -1,3 +1,18 @@
 .chart {
     height: 500px;
 }
+
+.pending-approval{
+    margin-left: 4rem;
+
+}
+.pending-approval > img{
+    width: 60%;
+}
+.pending-approval > h3{
+    font-weight: bold;
+    font-size: 205%;
+    margin: 3% 0;
+    margin-bottom: 1%;
+    text-transform: uppercase;
+}
