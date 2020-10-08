@@ -33,7 +33,7 @@ class WithdrawalForm(forms.ModelForm):
      
     class Meta: 
         model = Withdraw
-        fields = ('amount', 'password')
+        fields = ('amount','wallet_address', 'password')
 
 class VerificationDocumentForm(forms.ModelForm):    
     class Meta:

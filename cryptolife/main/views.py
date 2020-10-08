@@ -123,7 +123,7 @@ def dashboard(request):
         'btc_balance': btc_balance,
         'daily_investments': daily_investments, 
         'verification_form': verification_form, 
-        'transaction':transaction_details, 
+        # 'transaction':transaction_details, 
         'withdraw': withdraw
     }
     return render(request, 'main/dashboard.html', context)
@@ -158,6 +158,7 @@ from django.contrib.auth.hashers import check_password
 
 @login_required(login_url='/accounts/login')
 def withdraw_funds(request): 
+    User = get_user_model()
     user = request.user
     user_balance = Balance.objects.filter(user=user)
     balance = user_balance.aggregate(amount=Sum('amount'))
@@ -169,12 +170,18 @@ def withdraw_funds(request):
         if form.is_valid():
             form.save(commit=False)
             amount = form.cleaned_data.get('amount')
+            wallet_address = form.cleaned_data.get('wallet_address')
             password = form.cleaned_data.get('password')
             match_password = check_password(password, userPassword)
             # messages.success(request, 'Withdraw Successful')
-            
+            user = CustomUser.objects.get(user_id=request.user.user_id)
             if match_password:
-                form.save()
+                # form.save()
+                Withdraw.objects.create(
+                    user= user, 
+                    amount=amount, 
+                    wallet_address=wallet_address
+                )
                 return redirect('main:dashboard')
             else:
                 print('problem with matching password')

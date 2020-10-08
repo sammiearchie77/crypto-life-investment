@@ -230,6 +230,10 @@ desktop mode
         list-style: none;
         padding-left: 2px;
     }
+    .footer-logo {
+        width: 100%;
+        border-radius: 50%;
+    }
     /* about section */
     #message {
         position: relative;
@@ -440,6 +444,10 @@ desktop mode
         padding: 0 !important;
         margin: 0;
         text-align: justify;
+    }
+    .footer-logo {
+        width: 5 0%;
+        border-radius: 50%;
     }
     .why-cryptolife-header {
         font-weight: bold;

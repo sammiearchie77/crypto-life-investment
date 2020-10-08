@@ -139,8 +139,9 @@ class Notification(models.Model):
 
 # withdrawal
 class Withdraw(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
+    wallet_address = models.CharField(max_length=40, default='')
 
     # password = models.CharField(max_length=30, default = '')
 
@@ -181,6 +182,6 @@ class Transaction(models.Model):
     )
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
-    transaction_id = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    transaction_id = models.UUIDField(default=uuid.uuid4())
     amount = models.IntegerField()
     type = models.CharField(max_length=30, choices=types)

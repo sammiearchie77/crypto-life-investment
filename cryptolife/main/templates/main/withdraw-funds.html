@@ -6,100 +6,73 @@
     <div class="wrapper ">
         {% include "dashboard/sidebar.html" %}
         <div class="main-panel">
+            {% if request.user.withdraw %}
             <div class="container">
-                 <h3>Test</h3>
-                 <div class="mb-4">
-                    <div class="verification-form-bg">
-                        <div id="verify-form-header">
-                            <h3 class="text-center">
-                                Withdraw Funds
-                            </h3>
-                        </div>
-                        <div id="verification-form-message">
-                            <p>
-                                Verify Your account by providing us with a vaild document (ID card). Drivers Licence, Valid Work ID Card, Passport, etc are accepted. Please do not try to upload a fake document as our support teams reviews every document uploaded. Detected fake documents will lead to immediate suspension of account! Once Uploaded, Our support team reviews your document and gets back to you within 3 working days. The uploaded documents are for verification purposes only and are deleted once confirmed. You will be notified via email once your document has been verified. Choose your document and click on the verify button.
-                            </p>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <form method="POST" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {{ form }}
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile"><span>Driver's License, Passport, e.t.c</span></label>
-                                    </div>
-                                    <div class="form-group">
-                                        {{ verification_form.document_type|add_class:"form-control"|attr:"placeholder:Enter Type (e.g Drivers License)" }}
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="front-document">click to upload the front document</label>
-                                    </div>
-                                    <div class="form-group">
-                                      {{ verification_form.front_document|add_class:"form-control-file"|attr:"placeholder:Enter Type (e.g Drivers License)"|attr:"id:front-document"}}
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="back-document">click to upload the back document</label>
-                                    </div>
-                                    <div class="form-group">
-                                        {{ verification_form.back_document|add_class:"form-control-file"|attr:"id:back-document" }}
-                                    </div>
-                                    
-                                    <!-- Button trigger modal -->
-                                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                        submit
-                                    </button>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <img src="./static/img/verified.jpeg" class="modal-verification-image">
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- <div id="verification-form">
-                            <form action="" class="form-group" method="POST" enctype="multipart/form-data">
-                                <div class="row"> -->
-                                    <!-- document type -->
-                                    <!-- <div class="col-lg-3">
-                                        <label for="">
-                                            Document Type: <span class="display-5">e.g Driver's License, Passport, e.t.c</span>
-                                        </label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                       <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
-                                    </div> -->
-        
-                                    <!-- Document front page -->
-                                    <!-- <div class="col-lg-3 mt-2">
-                                        <label for="exampleFormControlFile1">
-                                            Front Document</span>
-                                        </label>
-                                    </div> -->
-                                    <!-- <div class="col-lg-9">
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1"> 
-                                    </div> -->
-                                    <!-- document back page -->
-                                    <!-- <div class="col-lg-3 mt-2">
-                                        <label for="exampleFormControlFile2">
-                                            Back Document</span>
-                                        </label>
-                                    </div>
-                                    <div class="col-lg-9">
-                                       <input type="file" class="form-control-file" id="exampleFormControlFile2">
-                                       <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div> -->
+                 <!-- <h3>Test</h3> -->
+                 <!-- withdrawal form -->
+                 <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-success text-center">
+                            Withdrawal Successful, Awaiting Approval
+                        </h3>
                     </div>
                 </div>
+            </div>    
+            {% else %}
+            <div class="container my-5">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- withdrawal form -->
+
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-6">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <h3 class="text-center my-5">Withdrawal Form</h3>
+                                    <div class="form-group">
+                                        <label for="">
+                                            <span>Amount($)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <input type="text" name="" id="" class="form-control-text form-control"> -->
+                                        {{ form.amount|add_class:'form-control-text form-control'}}
+                                    </div>
+
+                                    <!-- wallet address -->
+                                    <div class="form-group">
+                                        <label for="">
+                                            <span>Wallet Address</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <input type="text" name="" id="" class="form-control-text form-control"> -->
+                                        {{ form.wallet_address|add_class:'form-control-text form-control'}}
+                                    </div>
+
+                                    <!-- password -->
+                                    <div class="form-group">
+                                        <label for="">
+                                            <span>Password</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <input type="password" name="" id="" class="form-control-text form-control"> -->
+                                        {{ form.password|add_class:'form-control-text form-control'}}
+
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-block">Request Withdrawal</button>
+                                </form>
+                            </div>
+                            <div class="col-lg-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
             </div>
         </div>
     </div>
